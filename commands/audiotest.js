@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
     }
 
     voice.channel.join().then((connection) => {
-      connection.play(path.join(__dirname, 'heheboi.mp3'))
+      connection.play(path.join(__dirname, '..', 'heheboi.mp3'))
     })
   }
   module.exports.config = {
