@@ -41,9 +41,9 @@ module.exports.run = async (bot, message, args) => {
 
   const embed = new MessageEmbed()
     .setDescription(`**Server Name __${message.guild.name}__**`)
-    .setColor('BLUE')
+    .setColor('RANDOM')
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
-    .addField('General', [
+    .addField('<a:animated_babes:769121437108797460> General <a:animated_babes:769121437108797460>', [
       `**<a:chahal_arrow:741240733029236756> Name:** ${message.guild.name}`,
       `**<a:chahal_arrow:741240733029236756> ID:** ${message.guild.id}`,
       `**<a:chahal_arrow:741240733029236756> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
@@ -54,24 +54,24 @@ module.exports.run = async (bot, message, args) => {
       `**<a:chahal_arrow:741240733029236756> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
       '\u200b'
     ])
-    .addField('Statistics', [
-      `**❯ Role Count:** ${roles.length}`,
-      `**❯ Emoji Count:** ${emojis.size}`,
-      `**❯ Regular Emoji Count:** ${emojis.filter(emoji => !emoji.animated).size}`,
-      `**❯ Animated Emoji Count:** ${emojis.filter(emoji => emoji.animated).size}`,
-      `**❯ Member Count:** ${message.guild.memberCount}`,
-      `**❯ Humans:** ${members.filter(member => !member.user.bot).size}`,
-      `**❯ Bots:** ${members.filter(member => member.user.bot).size}`,
-      `**❯ Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
-      `**❯ Voice Channels:** ${channels.filter(channel => channel.type === 'voice').size}`,
-      `**❯ Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
+    .addField('<a:animated_babes:769121437108797460> Statistics <a:animated_babes:769121437108797460>', [
+      `**<a:chahal_arrow:741240733029236756> Role Count:** ${roles.length}`,
+      `**<a:chahal_arrow:741240733029236756> Emoji Count:** ${emojis.size}`,
+      `**<a:chahal_arrow:741240733029236756> Regular Emoji Count:** ${emojis.filter(emoji => !emoji.animated).size}`,
+      `**<a:chahal_arrow:741240733029236756> Animated Emoji Count:** ${emojis.filter(emoji => emoji.animated).size}`,
+      `**<a:chahal_arrow:741240733029236756> Member Count:** ${message.guild.memberCount}`,
+      `**<a:chahal_arrow:741240733029236756> Humans:** ${members.filter(member => !member.user.bot).size}`,
+      `**<a:chahal_arrow:741240733029236756> Bots:** ${members.filter(member => member.user.bot).size}`,
+      `**<a:chahal_arrow:741240733029236756> Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
+      `**<a:chahal_arrow:741240733029236756> Voice Channels:** ${channels.filter(channel => channel.type === 'voice').size}`,
+      `**<a:chahal_arrow:741240733029236756> Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
       '\u200b'
     ])
-    .addField('Presence', [
-      `**❯ Online:** ${members.filter(member => member.presence.status === 'online').size}`,
-      `**❯ Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
-      `**❯ Do Not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
-      `**❯ Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
+    .addField('<a:animated_babes:769121437108797460> Presence <a:animated_babes:769121437108797460>', [
+      `**<a:chahal_arrow:741240733029236756> Online:** ${members.filter(member => member.presence.status === 'online').size}`,
+      `**<a:chahal_arrow:741240733029236756> Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
+      `**<a:chahal_arrow:741240733029236756> Do Not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
+      `**<a:chahal_arrow:741240733029236756> Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
       '\u200b'
     ])
     .addField(`Roles [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None')
