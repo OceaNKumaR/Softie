@@ -3,7 +3,7 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
-bot.on("ready", async () => {
+module.exports = bot => {
     console.log(`${bot.user.username} is online`)
     bot.user.setActivity("Ocean YT", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
 }
