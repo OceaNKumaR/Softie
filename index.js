@@ -3,10 +3,10 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
-module.exports = bot => {
+bot.on("ready", async () => { 
     console.log(`${bot.user.username} is online`)
     bot.user.setActivity("Ocean YT", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
-}
+})
 
 
 const { GiveawaysManager } = require('discord-giveaways');
