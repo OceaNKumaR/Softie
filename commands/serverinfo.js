@@ -9,6 +9,14 @@ const filterLevels = {
 	ALL_MEMBERS: 'Everyone'
 };
 
+const verificationLevels = {
+	NONE: 'None',
+	LOW: 'Low',
+	MEDIUM: 'Medium',
+	HIGH: '(╯°□°）╯︵ ┻━┻',
+  VERY_HIGH: '┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻'
+};
+
 const regions = {
 	brazil: 'Brazil',
 	europe: 'Europe',
