@@ -3,6 +3,12 @@ const botconfig = require("../botsettings.json");
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 
+const filterLevels = {
+	DISABLED: 'Off',
+	MEMBERS_WITHOUT_ROLES: 'No Role',
+	ALL_MEMBERS: 'Everyone'
+};
+
 const regions = {
 	brazil: 'Brazil',
 	europe: 'Europe',
