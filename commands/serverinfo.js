@@ -44,14 +44,14 @@ module.exports.run = async (bot, message, args) => {
     .setColor('BLUE')
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
     .addField('General', [
-      `**<a:rightarrow:743737563755577395> Name:** ${message.guild.name}`,
-      `**<a:rightarrow:743737563755577395> ID:** ${message.guild.id}`,
-      `**<a:rightarrow:743737563755577395> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
-      `**<a:rightarrow:743737563755577395> Region:** \`${regions[message.guild.region]}`,
-      `**<a:rightarrow:743737563755577395> Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
-      `**<a:rightarrow:743737563755577395> Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
-      `**<a:rightarrow:743737563755577395> Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
-      `**<a:rightarrow:743737563755577395> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
+      `**<a:arrow2:761946493573267477> Name:** ${message.guild.name}`,
+      `**<a:arrow2:761946493573267477> ID:** ${message.guild.id}`,
+      `**<a:arrow2:761946493573267477> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+      `**<a:arrow2:761946493573267477> Region:** \`${regions[message.guild.region]}`,
+      `**<a:arrow2:761946493573267477> Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
+      `**<a:arrow2:761946493573267477> Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
+      `**<a:arrow2:761946493573267477> Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
+      `**<a:arrow2:761946493573267477> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
       '\u200b'
     ])
     .addField('Statistics', [
