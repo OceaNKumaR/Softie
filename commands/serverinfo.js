@@ -44,14 +44,14 @@ module.exports.run = async (bot, message, args) => {
     .setColor('BLUE')
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
     .addField('General', [
-      `**<a:arrow2:761946493573267477> Name:** ${message.guild.name}`,
-      `**<a:arrow2:761946493573267477> ID:** ${message.guild.id}`,
-      `**<a:arrow2:761946493573267477> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
-      `**<a:arrow2:761946493573267477> Region:** \`${regions[message.guild.region]}`,
-      `**<a:arrow2:761946493573267477> Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
-      `**<a:arrow2:761946493573267477> Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
-      `**<a:arrow2:761946493573267477> Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
-      `**<a:arrow2:761946493573267477> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
+      `**<a:chahal_arrow:741240733029236756> Name:** ${message.guild.name}`,
+      `**<a:chahal_arrow:741240733029236756> ID:** ${message.guild.id}`,
+      `**<a:chahal_arrow:741240733029236756> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+      `**<a:chahal_arrow:741240733029236756> Region:** \`${regions[message.guild.region]}`,
+      `**<a:chahal_arrow:741240733029236756> Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
+      `**<a:chahal_arrow:741240733029236756> Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
+      `**<a:chahal_arrow:741240733029236756> Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
+      `**<a:chahal_arrow:741240733029236756> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
       '\u200b'
     ])
     .addField('Statistics', [
