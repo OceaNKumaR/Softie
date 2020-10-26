@@ -16,10 +16,11 @@ module.exports.run = async (bot, message, args) => {
             .setAuthor(`Here is the Avaible Commands to use:`)
             .setDescription('Prefix `?`')
             .addFields({ name: '<a:yes_no:749635752018837575> **INFO**', value: '```memberinfo , about , ping , setnickname , clientid , serverinfo , addrole , cooldown```'})
-            .addFields({ name: '<a:yes_no:749635752018837575> **FUN**', value: '```kiss , cuddle , 8ball , hug , flipcoin , meme , say , hi , cat , dog```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **FUN**', value: '```kiss , cuddle , 8ball , hug , flipcoin , meme , say , hi```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **MODERATION**', value: '```kick , ban , mute , unmute , purge , embed , addrole , removerole , giveaway```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **NSFW**', value: '```nekonsfw , nsfw , boobs```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **UTILITY**', value: '```weather , avatar , dm , ascii , reddit```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **IMAGE**', value: '```cat , dog , house , thor , boo```'})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
