@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
             .addFields({ name: '<a:yes_no:749635752018837575> **FUN**', value: '```kiss , cuddle , 8ball , hug , flipcoin , meme , say , hi```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **MODERATION**', value: '```kick , ban , mute , unmute , purge , embed , addrole , removerole , giveaway```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **NSFW**', value: '```nekonsfw , nsfw , boobs```'})
-            .addFields({ name: '<a:yes_no:749635752018837575> **IMAGE**', value: '```cat , dog , house , thor , boo , ugly , ironman , pubg , apple , android```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **IMAGE**', value: '```cat , dog , house , thor , boo , ugly , ironman , pubg , apple , android , nora fatehi```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **UTILITY**', value: '```weather , avatar , dm , ascii , reddit```'})
             .setColor('#00FFF3')
             
