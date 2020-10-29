@@ -23,8 +23,8 @@ bot.giveawaysManager = new GiveawaysManager(bot, {
 });
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
-    welcomeChannel.send (`Welcome! ${member}`)
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === '💬╏ocean-chat')
+    welcomeChannel.send (`> Hey! New member verified! Say "hello" to ${member}`)
 })
 
 bot.on("guildMemberRemove", member => {
@@ -63,6 +63,7 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let prefix = botsettings.prefix;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
+    var parts = message.content.split(" ");
     
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
