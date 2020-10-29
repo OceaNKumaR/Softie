@@ -1,3 +1,3 @@
 # oceanytofficial
 
-DELHI SE HAI BEHANCHODDDDDDD!!!!!!!!!!
+BEST BOT EVER XD~
