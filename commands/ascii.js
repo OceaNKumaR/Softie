@@ -3,26 +3,25 @@ const botconfig = require("../botsettings.json");
 const figlet = require('figlet');
 
 module.exports = {
-    name: "ascii",
-    description: "Converts text to ascii",
-
     async run (client, message, args){
-        if(!args[0]) return message.channel.send('Please provide some text');
-
-        msg = args.join(" ");
-
-        figlet.text(msg, function (err, data){
-            if(err){
-                console.log('Something went wrong');
-                console.dir(err);
-            }
-            if(data.length > 2000) return message.channel.send('Please provide text shorter than 2000 characters')
-
-            message.channel.send('```' + data + '```')
-        })
-    }
-}
-
+        let text = args.join(" ");
+        if(!text) {
+     return message.channel.send(`Please provide text for the ascii conversion!`)
+     }
+        let maxlen = 20
+     if(text.length > 20) {
+     return message.channel.send(`Please put text that has 20 characters or less because the conversion won't be good!`)
+     }
+      // AGAIN, MAKE SURE TO INSTALL FIGLET PACKAGE!  
+     figlet(text, function(err, data) {
+     message.channel.send(data, {
+     code: 'AsciiArt' 
+     });
+     })
+     
+         }
+     };
+     
 module.exports.config = {
     name: "ascii",
     description: "make a word ascii",
