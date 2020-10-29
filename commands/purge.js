@@ -2,28 +2,27 @@ const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    if (isNaN(args[0]))
-        return message.channel.send(
-            "`I need to know how many messages to delete!`"
-        );
-    if (message.member.hasPermission("MANAGE_MESSAGES")) {
-        try {
-            message.channel
-                .bulkDelete(args)
-                .then((messages) =>
-                    message.channel
-                    .send("`Successfully deleted " + args[0] + " messages!`")
-                    .then((msg) => msg.delete({ timeout: 10000 }))
-                );
-        } catch {
-            message.channel.send("`A Error occured while trying to delete!`");
+    const amount = args.join(" ");
+        
+    if(!message.member.hasPermission("ADMINISTRATOR")) {
+  return message.channel.send(`You do not have the permission to use that.`)
         }
-    } else {
-        message.channel.send(
-            "`You dont have enough permissions to execute this command!`"
-        );
-    }
+
+    if(!amount) return message.reply('please provide an amount of messages for me to delete')
+
+    if(amount > 100) return message.reply(`you cannot clear more than 100 messages at once`)
+
+    if(amount < 1) return message.reply(`you need to delete at least one message`)
+
+    await message.channel.messages.fetch({limit: amount}).then(messages => {
+        message.channel.bulkDelete(messages
+)});
+
+
+message.channel.send('Success!')
+
 }
+
 
 module.exports.config = {
     name: "purge",
