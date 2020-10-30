@@ -2,16 +2,17 @@ const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    const replies = ["<a:12coin:771690131975438346> **You landed on Heads**", "<a:12coin:771690131975438346> **You landed on Tails**"];
-
-    const reply = replies[Math.floor(Math.random() * replies.length)];
-
+    var chance = Math.random();
+    if (chance == 0) {
+        message.channel.send(message.author + ",`Your coin landed on head!`");
+    } else {
+        message.channel.send(message.author + "`Your coin landed on tail!`");
+    }
 }
-
 module.exports.config = {
-    name: "flipcoin",
+    name: "flip",
     description: "Throws a coin for you!",
     usage: "?flipcoin",
     accessableby: "Members",
     aliases: []
-}
+} 
