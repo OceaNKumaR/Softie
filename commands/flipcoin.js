@@ -6,14 +6,6 @@ module.exports.run = async (bot, message, args) => {
 
     const reply = replies[Math.floor(Math.random() * replies.length)];
 
-    const embed = new MessageEmbed()
-        .setTitle("Flipcoin")
-        .setTitle(`${reply}`)
-        .setColor("ORANGE")
-        .setFooter(message.author.username)
-        .setTimestamp();
-
-    message.channel.send(embed);
 }
 
 module.exports.config = {
