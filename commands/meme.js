@@ -1,24 +1,35 @@
 const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
-const randomPuppy = require('random-puppy');
+const fetch = require("node-fetch");
+const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    const subReddits = ["meme", "me_irl", "dankmeme"]
-    const random = subReddits[Math.floor(Math.random() * subReddits.length)];
-    const img = await randomPuppy(random);
-
-    const embed = new Discord.MessageEmbed()
-    .setImage(img)
-    .setTitle(`From /r/${random}`)
-    .setURL(`http://reddit.com/${random}`)
-    .setColor ('#FF2D00')
-    message.channel.send(embed);
-
-}
+    const data = await fetch(
+        "https://www.reddit.com/r/dankmemes/random/.json"
+      ).then((res) => res.json());
+  
+      const children = data[0].data.children[0];
+      const permaLink = children.data.permalink;
+      const url = `https://reddit.com${permaLink}`;
+      const image = children.data.url;
+      const title = children.data.title;
+      const upvotes = children.data.ups;
+      const comments = children.data.num_comments;
+  
+      const embed = new MessageEmbed()
+        .setColor("ORANGE")
+        .setTitle(`${title}`)
+        .setURL(url)
+        .setImage(image)
+        .setFooter(`👍 ${upvotes} | 💬 ${comments}`);
+  
+      message.channel.send({ embed });
+    },
+   
 
 module.exports.config = {
     name: "meme",
-    description: "",
+    description: "shows meme",
     usage: "?meme",
     accessableby: "Members",
     aliases: []
