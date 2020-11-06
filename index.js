@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => { 
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("Ocean YT", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
+    bot.user.setActivity("s!help", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
 })
 
 
