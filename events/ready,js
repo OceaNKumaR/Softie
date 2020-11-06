@@ -3,5 +3,5 @@ const botconfig = require("../botsettings.json");
 
 module.exports = bot => { 
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("s!helpT", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
+    bot.user.setActivity("s!help", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
 }
