@@ -41,7 +41,8 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
     name: "playstore",
     description: "Shows Playstore app",
-    usage: "?playstore",
+    usage: "s!playstore",
     accessableby: "Members",
     aliases: []
 }
+
