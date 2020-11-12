@@ -14,13 +14,13 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('Prefix `s!`')
+            .setDescription('Prefix:`s!`,`s!invite` ')
             .addFields({ name: '<a:yes_no:749635752018837575> **INFO**', value: '```memberinfo , about , ping , setnickname , clientid , serverinfo , addrole , cooldown , membercount```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **FUN**', value: '```kiss , cuddle , 8ball , hug , flipcoin , meme , say , hi , emojify```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **MODERATION**', value: '```kick , ban , mute , unmute , purge , embed , addrole , removerole , addvip , giveaway```'})
-            .addFields({ name: '<a:yes_no:749635752018837575> **NSFW**', value: '```nekonsfw , nsfw , boobs```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **NSFW**', value: '```nekonsfw , nsfw , porn```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **IMAGE**', value: '```cat , dog , thor , nora , ironman , pubg , boo , house , apple , android , ugly , thanos```'})
-            .addFields({ name: '<a:yes_no:749635752018837575> **UTILITY**', value: '```weather , avatar , dm , ascii , reddit , wallpaper , google , playstore , spotify```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **UTILITY**', value: '```weather , avatar , dm , ascii , reddit , wallpaper , google , playstore , spotify , image```'})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
