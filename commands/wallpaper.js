@@ -4,7 +4,7 @@ const botconfig = require("../botsettings.json");
 module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
     .setTitle('<a:noheckno:770923367074627595> No Type Mentioned')
-    .setDescription('**PLEASE ENTER EITHER PC OR MOBILE**\n**For example** <a:GG_Arrow:770924727459250177> `?wallpaper-pc` , `?wallpaper-mobile`')
+    .setDescription('**PLEASE ENTER EITHER PC OR MOBILE**\n**For example** <a:GG_Arrow:770924727459250177> `s!wallpaper-pc` , `s!wallpaper-mobile`')
     
     .setColor('RANDOM')
     .setTimestamp()
