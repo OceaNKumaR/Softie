@@ -33,7 +33,7 @@ exports.run = async (client, message, args) => {
         let time = `${minutes}:${seconds}`;
 
         const embed = new Discord.MessageEmbed()
-        .setAuthor("Spotify Track Information", "https://image.flaticon.com/icons/svg/2111/2111624.svg")
+        .setAuthor("Spotify Track Information", "https://cdn.discordapp.com/emojis/778913711514976286.png?v=1")
         .setColor(0x1ED768)
         .setThumbnail(image)
         .addField("Name:", name, true)
