@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!args[1]) {
         message.reply(
-            `<a:noheckno:770923367074627595> **Pick one (Rock, Paper, Scissors) and make sure to type it after "s!rps" to play!**`
+            `**<a:noheckno:770923367074627595> Pick one (Rock, Paper, Scissors) and make sure to type it after "s!rps" to play!**`
         );
     } else {
         const choices = ["rock", "paper", "scissors"];
@@ -18,14 +18,14 @@ module.exports.run = async (bot, message, args) => {
             const playerIdx = choiceDict[player];
             const computerIdx = choiceDict[computer];
     
-            if (playerIdx == computerIdx) gameMsg = "It's a tie!";
+            if (playerIdx == computerIdx) gameMsg = "**It's a tie!** <:wPog:778904597951414282>";
             if (computerIdx == playerIdx + 1 || computerIdx == playerIdx - 2)
-                gameMsg = "You lose..";
+                gameMsg = "**You lose.** <a:laughh:778903191701291058>";
             if (playerIdx == computerIdx + 1 || playerIdx == computerIdx - 2)
-                gameMsg = "You win!";
+                gameMsg = "**You win!** <a:giveaway2:778903658837311489>";
     
-            message.channel.send(`You : ${player}\nSoftie : ${computer}\n${gameMsg}`);
-        } else message.channel.send("Invalid Choice... Try again");
+            message.channel.send(`**You : ${player}\nSoftie : ${computer}\n${gameMsg}**`);
+        } else message.reply("<a:noheckno:770923367074627595> **Invalid Choice... Try again**");
     }
 }
 module.exports.config = {
@@ -35,3 +35,4 @@ module.exports.config = {
     accessableby: "Members",
     aliases: []
 }
+
