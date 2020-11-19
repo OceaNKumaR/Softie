@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: ':point_up: - `poke`' , value: '**Pokes** someone in your server', inline: true},
         { name: ':persevere: - `slap`' , value: '**Slaps** someone in your server', inline: true},
         { name: ':stuck_out_tongue_winking_eye: - `smug`' , value: '**Smugs** someone in your server', inline: true},
+        { name: ':rofl: - `tickle`' , value: '**Tickles** someone in your server', inline: true},
 
     )
     .setTimestamp()
@@ -27,3 +28,4 @@ module.exports.config = {
     accessableby: "Members",
     aliases: []
 }
+
