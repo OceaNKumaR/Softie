@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!args[1]) {
         message.reply(
-            `**<a:noheckno:770923367074627595> Pick one (Rock, Paper, Scissors) and make sure to type it after "s!rps" to play!**`
+            `<a:noheckno:770923367074627595> **Pick one (Rock, Paper, Scissors) and make sure to type it after "s!rps" to play!**`
         );
     } else {
         const choices = ["rock", "paper", "scissors"];
