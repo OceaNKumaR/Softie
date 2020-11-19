@@ -38,5 +38,5 @@ module.exports.config = {
     description: "Shows the information of a member/user",
     usage: "s!memberinfo",
     accessableby: "Members",
-    aliases: ['userinfo']
+    aliases: ['userinfo , whois']
 }
