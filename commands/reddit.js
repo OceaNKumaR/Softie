@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         .setURL(`https://reddit.com/r/${Subreddit}`);
       message.channel.send(Embed);
     } catch (err) {
-      message.channel.send(err);
+      console.log(err);
     }
 }
 module.exports.config = {
