@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
     .setColor('RANDOM')
 
-    .setFooter("Powered by Google" , "https://cdn.discordapp.com/attachments/769939906117500968/771012314739900457/unnamed.png")
+    .setFooter("Powered by Google" , "https://cdn.discordapp.com/emojis/778909809705615361.png?v=1")
 
 
 
