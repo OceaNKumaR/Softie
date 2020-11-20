@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
             .setDescription('Prefix:`s!`,`s!invite` ')
-            .addFields({ name: '<a:yes_no:749635752018837575> **INFO**', value: '```memberinfo , about , ping , setnickname , clientid , serverinfo , addrole , cooldown , membercount```'})
+            .addFields({ name: '<a:yes_no:749635752018837575> **INFO**', value: '```memberinfo , about , ping , setnickname , clientid , serverinfo , addrole , emoji , cooldown , membercount```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **FUN**', value: '```chat , rps , joke , kiss , cuddle  , poke , smug , slap , tickles , pat , 8ball , hug , flipcoin , meme , say , hi , emojify```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **MODERATION**', value: '```kick , ban , mute , unmute , purge , embed , addrole , removerole , addvip , giveaway```'})
             .addFields({ name: '<a:yes_no:749635752018837575> **NSFW**', value: '```nekonsfw , nsfw , porn```'})
