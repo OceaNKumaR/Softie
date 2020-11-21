@@ -6,8 +6,6 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('__**Others**__')
     .setColor('#ffcfcf')
     .addFields(
-        { name: ':art: - `ascii`' , value: 'Turns a text into text art', inline: true},
-        { name: ':abacus: - `math`' , value: '**Calculates** and solves questions', inline: true},
         { name: '<:invite_red:779624387607396412> - `invite`' , value: '**invite this bot to your server**', inline: true},
         { name: '<:PEPEsupportEmoji000:779624685594738718> - `support`' , value: 'Need **support**?', inline: true},
         { name: '🔞 - Nsfw' , value: '`Some NSFW commands`'},
