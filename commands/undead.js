@@ -1,4 +1,5 @@
-const { prefix } = require('../../config.json')
+const Discord = require("discord.js")
+const botconfig = require("../botsettings.json");
 const { MessageEmbed } = require('discord.js')
 
 exports.run = async (client, message, args) => {
@@ -19,9 +20,9 @@ exports.run = async (client, message, args) => {
 
 
 module.exports.config = {
-    name: "revive",
+    name: "undead",
     description: "Makes a User **alive**",
-    usage: "s!revive",
+    usage: "s!undead",
     accessableby: "Admins",
     aliases: []
 }
