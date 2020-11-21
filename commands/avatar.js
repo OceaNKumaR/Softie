@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
   .setTitle(`${user.tag} avatar`)
   .setDescription(`[Avatar URL of **${user.tag}**](${avatar})`)
-  .setColor(0x1d1d1d)
+  .setColor('#ffcfcf')
   .setImage(avatar)
   
   return message.channel.send(embed);
