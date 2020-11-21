@@ -8,6 +8,8 @@ module.exports.run = async (bot, message, args) => {
     .addFields(
         { name: ':art: - `ascii`' , value: 'Turns a text into text art', inline: true},
         { name: ':abacus: - `math`' , value: '**Calculates** and solves questions', inline: true},
+        { name: '<:invite_red:779624387607396412> - `invite`' , value: '**invite this bot to your server**', inline: true},
+        { name: '<:PEPEsupportEmoji000:779624685594738718> - `support`' , value: 'Need **support**?', inline: true},
         { name: '🔞 - Nsfw' , value: '`Some NSFW commands`'},
         { name: '<a:sex:779282857578201098> - `porn`' , value: 'Shows you a porn image', inline: true},
         { name: '<a:Hentai:779283191139663872> - `nsfw`' , value: 'Shows you a hentai image', inline: true},
