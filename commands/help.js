@@ -42,6 +42,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:6011_among_us_cyan:778163803007221770> - Among-Us', value: '`s!help-among-us`', inline: true},
         { name: ':woman_juggling: - Interaction', value: '`s!help-interaction`', inline: true},
         { name: '<a:musicau:779278788990992395> - Soundboard' , value: '`s!help-soundboard`', inline: true},
+        { name: '<:blobcamera:779627607338778654> - Image' , value: '`s!help-image`', inline: true},
         { name: ':mask: - Covid', value: '`s!covid / s!covid <country>`', inline: true}
     )
     .setTimestamp()
