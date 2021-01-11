@@ -11,6 +11,25 @@ bot.on("ready", async () => {
     bot.user.setActivity("s!help | s!invite", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
 })
 
+const fs = require("fs");
+
+const { Player } = require('discord-player');
+
+const player = new Player(bot);
+bot.player = player;
+bot.emotes = require('./config/emojis.json');
+bot.filters = require('./config/filters.json');
+
+fs.readdir('./player-events/', (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./player-events/${file}`);
+        let eventName = file.split(".")[0];
+        console.log(`Loading player event ${eventName}`);
+        bot.player.on(eventName, event.bind(null, bot));
+    });
+});
+
 
 const { GiveawaysManager } = require('discord-giveaways');
 
@@ -27,7 +46,6 @@ bot.giveawaysManager = new GiveawaysManager(bot, {
 
 require("./util/eventHandler")(bot)
 
-const fs = require("fs");
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
