@@ -4,7 +4,7 @@ const botconfig = require("../botsettings.json");
 module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
     .setTitle('__**Soundboard Commands!**__')
-    .setDescription('**Note:** These commands only works when the bot is running with **Visual Studio Code** so if the command is not working thats means the bot is not running with Visual Studio Code')
+    .setDescription('**Use `s!help` followed by a command name to get more information on a command.**For example: `s!help dilwale`.')
     .setColor('#ffcfcf')
     .addFields(
         { name: '<:heheh_boi:779267064963530754> - `heheboi`' , value: 'Plays **hehe boi** sound in the vc', inline: true},
