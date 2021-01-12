@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
         { name: ':scissors: - `rps`' , value: 'Plays rock paper scissors with the bot', inline: true},
         { name: ':white_heart: - `advice`' , value: 'Get some usefull advice for yourself! It will help you in future ;)', inline: true},
         { name: ':grey_question: - `coinflip`' , value: 's it heads? Or its Tails? Lets check it!', inline: true},
-        { name: '<a:gay:778612202034167808> - `emojify`' , value: 'Converts your text into emoji', inline: true},
+        { name: '<:gay:782602050915139595> - `emojify`' , value: 'Converts your text into emoji', inline: true},
  
         )
         .setTimestamp()
