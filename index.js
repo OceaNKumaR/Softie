@@ -6,10 +6,16 @@ const bot = new Discord.Client({disableEveryone: true});
 
 mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data' , {useNewUrlParser: true, useUnifiedTopology: true})
 
+
+// bot status
+
 bot.on("ready", async () => { 
     console.log(`${bot.user.username} is online`)
     bot.user.setActivity("s!help | s!invite", {type: "STREAMING" , url: "https://twitch.tv/OceanYT" });
 })
+
+
+// music cmds setup
 
 const fs = require("fs");
 
@@ -19,6 +25,9 @@ const player = new Player(bot);
 bot.player = player;
 bot.emotes = require('./config/emojis.json');
 bot.filters = require('./config/filters.json');
+
+
+// events setup
 
 fs.readdir('./player-events/', (err, files) => {
     if (err) return console.error(err);
@@ -30,6 +39,8 @@ fs.readdir('./player-events/', (err, files) => {
     });
 });
 
+
+//giveaway cmds setup
 
 const { GiveawaysManager } = require('discord-giveaways');
 
@@ -43,6 +54,9 @@ bot.giveawaysManager = new GiveawaysManager(bot, {
         reaction: "🎉"
     }
 });
+
+
+// event and command handler
 
 require("./util/eventHandler")(bot)
 
@@ -67,8 +81,17 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
+
+// message.js
+
 bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
+    const mentionRegex = RegExp(`^<@!766228516647337984>$`);
+    const mentionRegexPrefix = RegExp(`^<@!766228516647337984> `);
+
+    if (!message.guild || message.author.bot) return;
+
+    if (message.content.match(mentionRegex)) message.reply(`<a:wavqq:798513082707607584> **Hey..!! My prefix for ${message.guild.name} is \`s!\`.**`);
+
 
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -82,6 +105,8 @@ bot.on("message", async message => {
 
 })
 
+
+// antispam system
 
 const usersMap = new Map();
 const LIMIT = 5;
@@ -153,5 +178,6 @@ bot.on('message', async(message) => {
     }
 })
 
+// end ~
 
 bot.login(botsettings.token);
