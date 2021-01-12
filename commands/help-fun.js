@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:hangman:778606629817548801> - `hangman` ' , value: '**Hangman**, a word guessing game', inline: true},
         { name: ':frog: - `meme`' , value: 'Shows a random **meme**', inline: true},
         { name: ':speaking_head: - `say`' , value: 'Bot resends your message', inline: true},
-        { name: ':book: - `urban`' , value: 'Searches the word on **urabn** dictionary', inline: true},
+        { name: '<:tictactoe:798545510028935219> - `tictactoe`' , value: 'Play **tictactoe** with your friends.', inline: true},
         { name: ':scissors: - `rps`' , value: 'Plays rock paper scissors with the bot', inline: true},
         { name: ':white_heart: - `advice`' , value: 'Get some usefull advice for yourself! It will help you in future ;)', inline: true},
         { name: ':grey_question: - `coinflip`' , value: 's it heads? Or its Tails? Lets check it!', inline: true},
