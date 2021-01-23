@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data
 
 bot.on("ready", async () => { 
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("s!help | s!invite", {type: "PLAYING" });
+    bot.user.setActivity("www.softiebot.cf", {type: "WATCHING" });
 })
 
 
