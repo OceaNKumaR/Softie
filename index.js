@@ -101,28 +101,21 @@ bot.on("message", async message => {
       .setTitle(`My Prefix is \`s!\``)
       .setDescription(`Use \`s!help\` To Get a List of All Commands. \n [Invite](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot) | [Support Server](https://discord.gg/k5KM6kP) `)
       .setThumbnail('https://cdn.discordapp.com/attachments/772133780784807963/802069971433422878/Softie.png')
+      .setFooter('www.softiebot.cf')
       .setColor('#ffcfcf');
     message.channel.send(prefixembed)
   }
 
 
   let messageArray = message.content.split(" ");
- 
-    let cmd = messageArray[0];
-    let prefix = botsettings.prefix;
-    if (message.content.startsWith)(`<@!766228516647337984>`) || message.content.startsWith(`<@!766228516647337984>`); {
-        prefix = `<@!766228516647337984>`    
-    
-        }
-
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    var parts = message.content.split(" ");
-    
-    if(!message.content.startsWith(prefix)) return;
-    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(bot,message,args)
-
+  let cmd = messageArray[0];
+  let prefix = botsettings.prefix;
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  var parts = message.content.split(" ");
+  
+  if(!message.content.startsWith(prefix)) return;
+  let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+  if(commandfile) commandfile.run(bot,message,args)
 })
 
 
