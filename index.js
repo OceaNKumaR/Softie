@@ -85,17 +85,37 @@ fs.readdir("./commands/", (err, files) => {
 // message.js
 
 bot.on("message", async message => {
+
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;  
+
     const mentionRegex = RegExp(`^<@!766228516647337984>$`);
     const mentionRegexPrefix = RegExp(`^<@!766228516647337984> `);
 
     if (!message.guild || message.author.bot) return;
 
-    if (message.content.match(mentionRegex)) message.reply(`<a:wavqq:798513082707607584> **Hey..!! My prefix for ${message.guild.name} is \`s!\`.**`);
+    if (message.content.match(mentionRegex)) message.reply(`<a:wavqq:798513082707607584> **Hey..!! Thanks For Pinging Me.**`);
+
+    if((message.content === "<@!766228516647337984>") || (message.content === "<@!766228516647337984>")){
+        let prefixembed = new Discord.MessageEmbed()
+      .setTitle(`My Prefix is \`s!\``)
+      .setDescription(`Use \`s!help\` To Get a List of All Commands. \n [Invite](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot) | [Support Server](https://discord.gg/k5KM6kP) `)
+      .setThumbnail('https://cdn.discordapp.com/attachments/772133780784807963/802069971433422878/Softie.png')
+      .setColor('#ffcfcf');
+    message.channel.send(prefixembed)
+  }
 
 
-    let messageArray = message.content.split(" ");
+  let messageArray = message.content.split(" ");
+ 
     let cmd = messageArray[0];
     let prefix = botsettings.prefix;
+    if (message.content.startsWith)(`<@!766228516647337984>`) || message.content.startsWith(`<@!766228516647337984>`); {
+        prefix = `<@!766228516647337984>`    
+    
+        }
+
+
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     var parts = message.content.split(" ");
     
