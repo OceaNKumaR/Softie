@@ -16,7 +16,6 @@ module.exports.run = async (bot, message, args) => {
         { name: '🌅 - `wallpaper`' , value: 'Get a cool **wallpaper** for yourself', inline: true},
         { name: '<:googleplaystore:778913243875770388> - `playstore`' , value: 'Shows **Playstore** app', inline: true},
         { name: '<:spotify:778913711514976286> - `spotify`' , value: 'Show a Listening **Spotify** user status.', inline: true},
-        { name: '<:Reddit:778915274631413771> - `reddit`' , value: 'Get a meme from a subreddit of your choice!', inline: true},
  
     )
 
