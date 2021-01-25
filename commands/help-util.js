@@ -9,6 +9,7 @@ module.exports.run = async (bot, message, args) => {
         { name: 'Use `s!help` followed by a command name to get more information on a command.' , value: 'For example: `s!help google`.'},
         { name: ':partly_sunny: - `weather`' , value: 'Checks a weather for a specific city.', inline: true},
         { name: '<:Google:778909809705615361> - `google`' , value: 'Googling somthing', inline: true},
+        { name: '<:News:803193225573302303> - `news`' , value: 'Replies with the 5 latest world **news** headlines', inline: true},
         { name: '👤 - `avatar`' , value: 'Display a user **avatar**', inline: true},
         { name: '<a:CheckDms:778911087923560459> - `dm`' , value: '**dm** a user', inline: true},
         { name: '<a:juejuejuejue:778911772265807892> - `ascii`' , value: 'Converts your text into **ascii**', inline: true},
@@ -31,3 +32,4 @@ module.exports.config = {
     accessableby: "Members",
     aliases: []
 }
+
