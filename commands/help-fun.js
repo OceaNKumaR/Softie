@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
         { name: ':laughing: - `joke`' , value: 'Gives you a random **joke**', inline: true},
         { name: '<:hangman:778606629817548801> - `hangman` ' , value: '**Hangman**, a word guessing game', inline: true},
         { name: ':frog: - `meme`' , value: 'Shows a random **meme**', inline: true},
+        { name: '🔫 - `gunfight`' , value: 'Engage In A **Gunfight** Against Another User', inline: true},
         { name: ':speaking_head: - `say`' , value: 'Bot resends your message', inline: true},
         { name: '<:tictactoe:798545510028935219> - `tictactoe`' , value: 'Play **tictactoe** with your friends.', inline: true},
         { name: ':scissors: - `rps`' , value: 'Plays rock paper scissors with the bot', inline: true},
