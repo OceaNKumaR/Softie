@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<a:CheckDms:778911087923560459> - `dm`' , value: '**dm** a user', inline: true},
         { name: '<a:juejuejuejue:778911772265807892> - `ascii`' , value: 'Converts your text into **ascii**', inline: true},
         { name: '🌅 - `wallpaper`' , value: 'Get a cool **wallpaper** for yourself', inline: true},
+        { name: '<:Wikipedia:803536696305647617> - `wikipedia`' , value: 'Shows Info From **Wikipedia**', inline: true},
         { name: '<:googleplaystore:778913243875770388> - `playstore`' , value: 'Shows **Playstore** app', inline: true},
         { name: '<:spotify:778913711514976286> - `spotify`' , value: 'Show a Listening **Spotify** user status.', inline: true},
  
@@ -31,4 +32,5 @@ module.exports.config = {
     accessableby: "Members",
     aliases: []
 }
+
 
