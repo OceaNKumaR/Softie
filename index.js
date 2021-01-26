@@ -104,6 +104,19 @@ bot.on("message", async message => {
       .setFooter('www.softiebot.cf')
       .setColor('#ffcfcf');
     message.channel.send(prefixembed)
+
+const queue2 = new Map();
+const queue3 = new Map();
+const queue = new Map();
+const games = new Map()
+
+let ops = {
+    queue2: queue2,
+    queue: queue,
+    queue3: queue3,
+    games: games
+}
+
   }
 
 
