@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '👤 - `avatar`' , value: 'Display a user **avatar**', inline: true},
         { name: '<a:CheckDms:778911087923560459> - `dm`' , value: '**dm** a user', inline: true},
         { name: '<a:juejuejuejue:778911772265807892> - `ascii`' , value: 'Converts your text into **ascii**', inline: true},
+        { name: '🎙️ - `tts`' , value: 'Text To Speech', inline: true},
         { name: '🌅 - `wallpaper`' , value: 'Get a cool **wallpaper** for yourself', inline: true},
         { name: '<:Wikipedia:803536696305647617> - `wikipedia`' , value: 'Shows Info From **Wikipedia**', inline: true},
         { name: '<:googleplaystore:778913243875770388> - `playstore`' , value: 'Shows **Playstore** app', inline: true},
@@ -32,5 +33,4 @@ module.exports.config = {
     accessableby: "Members",
     aliases: []
 }
-
 
