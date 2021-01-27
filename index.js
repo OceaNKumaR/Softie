@@ -6,6 +6,13 @@ const bot = new Discord.Client({disableEveryone: true});
 
 mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data' , {useNewUrlParser: true, useUnifiedTopology: true})
 
+.then(response=>{
+    console.log(`Connected To MongoDB!`)
+})
+
+.catch(err=>{
+    console.log(`Not Connected To MongoDB!`)
+})
 
 // bot status
 
