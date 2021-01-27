@@ -6,6 +6,8 @@
 <p align="center">Meet Mito, a multipurpose discord bot that has features ranging from HQ music, high-level moderation with logs, leveling, and Fun commands!</p>
 <br></div>
 
+[![github stats](https://github-readme-stats.vercel.app/api?username=Ocean2324&count_private=true&theme=onedark)](https://github.com/anuraghazra/github-readme-stats)
+
 ## Features 
 - High Quality Music from YouTube! 
 - Soundboard!
