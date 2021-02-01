@@ -8,8 +8,14 @@ const ms = require('ms')
 
 module.exports.run = async (bot, message, args) => {
 
-    let timeout = 86400000
-    let reward = 1500
+
+    let responses = ["You do a heist on the EU bank for",
+"You jump the old lady walking down the street. She had"]
+
+let response = Math.floor(Math.random() * responses.length)
+
+    let timeout = 3600000000
+    let reward = Math.floor(Math.random()* Math.floor(300))
     Data.findOne ({
         id:message.author.id
 
@@ -21,26 +27,27 @@ module.exports.run = async (bot, message, args) => {
                 Money:reward,
                 Bank:0,
                 lb:"all",
-                daily:Date.now()
+                crime:Date.now()
             })
             newD.save().catch(err => console.log(err))
-             return message.channel.send("Here are your first daily reward")
+             return message.channel.send("Here are your first Work reward")
         }else{
-            if(timeout -(Date.now()-data.daily)>0){
+            if(timeout -(Date.now()-data.crime)>0){
+
                 let embed = new MessageEmbed()
                 .setTitle("Slow down")
-                .setDescription(`<:slowmode:805818971881996359> You need to wait 24h to get more money`)
+                .setDescription(`<:slowmode:805818971881996359> You need to wait 1h to get more money`)
                 .setColor("#ffcfcf") 
 
                 message.channel.send(embed)
             }else{
                 data.Money +=reward
-                data.daily =Date.now()
+                data.work =Date.now()
                 data.save().catch(err => console.log(err))
 
                 let embed = new MessageEmbed()
-                .setTitle("Your daily reward 😇")
-                .setDescription(`You received your daily reward of $${reward}`)
+                .setDescription(`${responses[response]} **$${reward}** 😈`)
+                .setTimestamp()
                 .setColor("#ffcfcf")
                 message.channel.send(embed)
             }
@@ -50,9 +57,9 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-    name: "daily",
-    description: "Gives you money in every 24 hours.",
-    usage: "s!daily",
+    name: "crime",
+    description: "Work hard to get Money.",
+    usage: "s!crime",
     accessableby: "Members",
     aliases: []
 }

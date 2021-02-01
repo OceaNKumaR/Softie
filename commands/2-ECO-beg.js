@@ -32,7 +32,8 @@ module.exports.run = async (bot, message, args) => {
                 let time = ms(timeout -(Date.now()-data.beg));
 
                 let embed = new MessageEmbed()
-                .setDescription(`You can beg again in **2m**`)
+                .setTitle("Slow down")
+                .setDescription(`<:slowmode:805818971881996359> You can beg again in **2m**`)
                 .setColor("#ffcfcf")
 
                 message.channel.send(embed)
