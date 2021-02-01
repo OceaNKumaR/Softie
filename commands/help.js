@@ -17,11 +17,12 @@ module.exports.run = async (bot, message, args) => {
             
             command = bot.commands.get(command);
             var embed = new Discord.MessageEmbed()
-            .setAuthor(`?${command.config.name} Command`)
+            .setAuthor(`s!${command.config.name} Command`)
             .setDescription(`
             <a:chahal_arrow:741240733029236756> **Description** ${command.config.description || "There is no Description for this command."}
             <a:chahal_arrow:741240733029236756> **Usage:** ${command.config.usage || "No Usage"}
-            <a:chahal_arrow:741240733029236756> **Permissions:** ${command.config.accessableby || "Members"}`)
+            <a:chahal_arrow:741240733029236756> **Permissions:** ${command.config.accessableby || "Members"}
+            <a:chahal_arrow:741240733029236756> **Aliases:** ${command.config.aliases || "No Aliases"}`)
             .setColor('#2EFF00')
 
         message.channel.send(embed);
@@ -33,6 +34,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription('My prefix `s!` **[Support Server](https://discord.gg/k5KM6kP)**--**[Invite me](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot)** ')
     .setColor('#ffcfcf')
     .addFields({ name:'<:softie:778158491004567552> - Softie : `s!help-softie`' , value: '__**Catergories**__'},
+               { name:'New Commands - ' , value: 'wikipiedia , tts ,news'},
         { name: ':eyeglasses: - Moderation', value: '`s!help-mod`', inline: true},
         { name: ':video_game: - Fun/Games', value: '`s!help-fun`', inline: true},
         { name: ':gift: - Giveaway', value: '`s!help-giveaway`', inline: true},
@@ -41,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
         { name: ':question: Others', value: '`s!help-others`', inline: true},
         { name: '<:6011_among_us_cyan:778163803007221770> - Among-Us', value: '`s!help-among-us`', inline: true},
         { name: ':woman_juggling: - Interaction', value: '`s!help-interaction`', inline: true},
-        { name: '<a:musicau:779278788990992395> - Soundboard' , value: '`s!help-soundboard`', inline: true},
+        { name: '<:music:804267954690719794> - Soundboard' , value: '`s!help-soundboard`', inline: true},
         { name: '<:blobcamera:779627607338778654> - Image' , value: '`s!help-image`', inline: true},
         { name: ':musical_note: - Music', value: '`s!help-music`', inline: true},
         { name: '<a:dollar2:798454639657746462> - Economy', value: 'Coming soon!', inline: true}
