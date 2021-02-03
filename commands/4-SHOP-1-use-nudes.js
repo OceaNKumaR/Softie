@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     let embed = new MessageEmbed()
     .setTitle('👍 You Successfully Used Your Item')
-    .setDescription('Your fresh nude is ready [click here](https://youtu.be/dQw4w9WgXcQ) to see it.')
+    .setDescription('Your fresh nude is ready [click here](http://bit.ly/3axfrtV) to see it.')
     .setColor('#ffcfcf')
     .setTimestamp()
     message.channel.send(embed)
