@@ -64,7 +64,7 @@ let response = Math.floor(Math.random() * responses.length)
 
                 let embed = new MessageEmbed()
                 .setTitle("Slow down Im not made of money dude")
-                .setDescription(`<:slowmode:805818971881996359> You need to wait 30m to get more money`)
+                .setDescription(`<:slowmode:805818971881996359> You need to wait 1h to get more money`)
                 .setColor("#ffcfcf") 
 
                 message.channel.send(embed)
