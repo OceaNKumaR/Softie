@@ -13,8 +13,8 @@ const dataScheama = mongoose.Schema({
     crime:Number,
     shop:String,
     tax:Number,
-    hunt:Number,
-    fish:Number
+    hunt:Number
+    
 
 })
 module.exports = mongoose.model("Data",dataScheama)
