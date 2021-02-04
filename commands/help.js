@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:music:804267954690719794> - Soundboard' , value: '`s!help-soundboard`', inline: true},
         { name: '<:blobcamera:779627607338778654> - Image' , value: '`s!help-image`', inline: true},
         { name: ':musical_note: - Music', value: '`s!help-music`', inline: true},
-        { name: '<a:dollar2:798454639657746462> - Economy', value: 'Coming soon!', inline: true}
+        { name: '<a:dollar2:798454639657746462> - Economy', value: '`s!help-economy`', inline: true}
     )
     .setTimestamp()
 
