@@ -34,7 +34,7 @@ bot.emotes = require('./config/emojis.json');
 bot.filters = require('./config/filters.json');
 
 
-// events setup
+// music events setup
 
 fs.readdir('./player-events/', (err, files) => {
     if (err) return console.error(err);
@@ -51,15 +51,11 @@ fs.readdir('./player-events/', (err, files) => {
 
 const { GiveawaysManager } = require('discord-giveaways');
 
-bot.giveawaysManager = new GiveawaysManager(bot, {
-    storage: "./giveaways.json",
-    updateCountdownEvery: 5000,
-    default: {
-        botsCanWin: false,
-        exemptPermissions: ["MANAGE_MESSAGES", "ADMINISTRATOR"],
-        embedColor: "#FF0000",
-        reaction: "🎉"
-    }
+bot.giveaways = new GiveawaysManager(bot , {
+storage: './giveaways.json',
+updateCountdownEvery: 5000,
+embedColor: '#ffcfcf',
+reaction: '🎉'
 });
 
 
@@ -147,7 +143,7 @@ let ops = {
 const usersMap = new Map();
 const LIMIT = 5;
 const TIME = 300000;
-const DIFF = 3000;
+const DIFF = 2000;
 
 bot.on('message', async(message) => {
     if(message.author.bot) return;
