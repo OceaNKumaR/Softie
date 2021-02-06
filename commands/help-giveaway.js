@@ -3,10 +3,18 @@ const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
-    .setTitle('THIS CATERGORY IS UNDER MAINTENANCE!')
-    .setDescription('<a:nikallvde:778617648497688606> Please try some other Catergories by doing `s!help`')
+    .setTitle('__**Giveaway Commands!**__')
+    .addFields(
+        { name: 'Use `s!help` followed by a command name to get more information on a command.' , value: 'For example: `s!help gstart`.'},
+        { name: ':gift: - `gstart`' , value: 'Starts a **giveaway** with your custom details', inline: true},
+        { name: ':octagonal_sign: - `gend`' , value: '**Ends** the giveaway', inline: true},
+        { name: '⚙️ - `gedit`' , value: '**Edits** your giveaway with your new details', inline: true},
+ 
+        )
+        .setTimestamp()
+    
     .setColor('#ffcfcf')
-    .setTimestamp()
+    
 
     message.channel.send(embed);
 }
