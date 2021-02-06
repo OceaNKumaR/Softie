@@ -16,10 +16,6 @@ mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data
 
 // bot status
 
-bot.on("ready", async () => { 
-    console.log(`${bot.user.username} is online`)
-    bot.user.setActivity("www.softiebot.cf", {type: "WATCHING"});
-})
 
 
 // music cmds setup
