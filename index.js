@@ -14,9 +14,6 @@ mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data
     console.log(`Not Connected To MongoDB!`)
 })
 
-// bot status
-
-
 
 // music cmds setup
 
