@@ -1,46 +1,39 @@
 const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
-const urban = require("relevant-urban");
+const fetch = require("node-superfetch");
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
 
-if (!args[0]) return message.channel.send("Please specify the query.");
+
+    try {
+        const query = args.join(" ");
+        if (!args.length) {
+          return message.reply("Command Usage: `urban <Query>`")
+        }
+  
+        fetch(`http://api.urbandictionary.com/v0/define?term=${query}`)
+        .then(res => res.json())
+        .then(json => {
+          const data = json.list[0];
+          const definition = data.definition.replace(/[[\]]+/g, "");
+          const example = data.example.replace(/[[\]]+/g, "");
+          const embed = new MessageEmbed()
+            .setColor('#ffcfcf')
+            .setAuthor("Urban Dictionary", "https://vgy.me/ScvJzi.jpg")
+            .setDescription(`Displaying Urban Dictionary definition for "**${data.word}**"\n<${data.permalink}>`)
+            .addField("» Definition", `**${definition.substring(0, 1000)}...**`)
+            .addField("» Example", `${example.substring(0, 1000)}...`)
+            .setFooter(`Definition 1 of ${json.list.length}`)
+            .setTimestamp()
+          return message.channel.send({ embed });
+        })
+      } catch (err) {
+        return message.reply(`Oh no, an error occurred: \`${err.message}\`.`);
+      }
+    
 
 
-
-    let result = await urban(args[0]).catch(e => {
-
-        return message.channel.send(`Unknown word phrase of **${args[0]}**, please try again.`);
-
-    })
-
-
-
-    const embed = new Discord.MessageEmbed()
-
-    .setColor(0x7289DA)
-
-    .setTitle(result.word)
-
-    .setURL(result.urbanURL)
-
-    .setDescription(`**Definition:** \n*${result.definition}* \n\n**Example:** \n*${result.example}*`)
-
-    .addField("Author", result.author, true)
-
-    .addField("Rating", `👍 ${result.thumbsUp.toLocaleString()} | 👎 ${result.thumbsDown.toLocaleString()}`)
-
-
-
-    if (result.tags.length > 0 && result.tags.join(" ").length < 1024) {
-
-        embed.addField("Tags", result.tags.join(", "), true);
-
-    }
-
-
-
-    return message.channel.send(embed);
 }
 
 module.exports.config = {
