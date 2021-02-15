@@ -1,4 +1,4 @@
-const discord = require("discord.js")
+const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 const math = require('mathjs');
 
