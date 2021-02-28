@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
+    "@k3rn31p4nic/google-translate-api": "^1.1.1",
     "@spyte-corp/discord.js-remove-on-reaction": "^1.0.5",
     "aki-api": "^5.2.1",
     "ascii-table": "0.0.9",
@@ -18,6 +19,7 @@
     "canvacord": "^5.0.7",
     "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
+    "covidtracker": "^2.0.1",
     "discord-giveaways": "^4.2.1",
     "discord-player": "^3.2.1",
     "discord-xp": "^1.0.6",
