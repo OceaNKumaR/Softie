@@ -6,10 +6,6 @@ module.exports.run = async (bot, message, args) => {
     let helpArray = message.content.split(" ");
     let helpArgs = helpArray.slice(1);
 
-    if(helpArgs[0] === 'gaming') {
-        return message.reply("This is a Gaming information Command.")
-    }
-
     if(helpArgs[0]) {
         let command = helpArgs[0];
 
@@ -19,14 +15,18 @@ module.exports.run = async (bot, message, args) => {
             var embed = new Discord.MessageEmbed()
             .setAuthor(`s!${command.config.name} Command`)
             .setDescription(`
-            <a:chahal_arrow:741240733029236756> **Description** ${command.config.description || "There is no Description for this command."}
-            <a:chahal_arrow:741240733029236756> **Usage:** ${command.config.usage || "No Usage"}
-            <a:chahal_arrow:741240733029236756> **Permissions:** ${command.config.accessableby || "Members"}
-            <a:chahal_arrow:741240733029236756> **Aliases:** ${command.config.aliases || "No Aliases"}`)
-            .setColor('#2EFF00')
+            <a:arrow2:769113354559029249> **Description** ${command.config.description || "There is no Description for this command."}
+            <a:arrow2:769113354559029249> **Usage:** ${command.config.usage || "No Usage"}
+            <a:arrow2:769113354559029249> **Permissions:** ${command.config.accessableby || "Members"}
+            <a:arrow2:769113354559029249> **Aliases:** ${command.config.aliases || "No Aliases"}`)
+            .setColor('#ffcfcf')
 
         message.channel.send(embed);
-    }}
+    }
+else {
+message.reply(`**__${args.join(" ").toUpperCase()}__** is not a command.`)
+}
+} else {
 
 
     const main = new Discord.MessageEmbed()
@@ -69,7 +69,7 @@ module.exports.run = async (bot, message, args) => {
 
         pagination(message, pages, emojiList, timeout)
     }
-
+}
 
 module.exports.config = {
     name: "help",
