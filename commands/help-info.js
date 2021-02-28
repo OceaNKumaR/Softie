@@ -12,9 +12,10 @@ module.exports.run = async (bot, message, args) => {
         { name: '👤 - `about`' , value: 'Shows some information **about** the bot', inline: true},
         { name: '<:Blob_ping:778932436636794911> - `ping`' , value: 'Shows the **ping** of the bot', inline: true},
         { name: '👥 - `clientid`' , value: 'Shows the id of the client', inline: true},
+        { name: '🎭 - `poll`' , value: 'Make a simple **poll** and is easy', inline: true},
         { name: '<:cooldown:778970390679781406> - `cooldown`' , value: 'Shows your **cooldown**', inline: true},
         { name: '<:MW_members:778971298465447976> - `membercount`' , value: 'Tell how many members are in the server', inline: true},
-        { name: '<a:blueflame:766568847858860032> - `emoji`' , value: 'Shows the all **emojis** in the server', inline: true},
+        { name: '<a:vr_z_maxintheclub:768365030978486293> - `emoji`' , value: 'Shows the all **emojis** in the server', inline: true},
 
     )
 
