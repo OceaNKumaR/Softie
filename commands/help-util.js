@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:translate:815478416056909886> - `translate`' , value: '**Translate** a sentence', inline: true},
         { name: '<:server23:815457742823096350> - `embed`' , value: 'Converts Your Text To **Embed**', inline: true},
         { name: '🌅 - `wallpaper`' , value: 'Get a cool **wallpaper** for yourself', inline: true},
+        { name: '<a:domain:815482448640475197> - `shorturl`' , value: 'Shorten an url', inline: true},
         { name: '<:Wikipedia:803536696305647617> - `wikipedia`' , value: 'Shows Info From **Wikipedia**', inline: true},
         { name: '<:googleplaystore:778913243875770388> - `playstore`' , value: 'Shows **Playstore** app', inline: true},
         { name: '<:spotify:778913711514976286> - `spotify`' , value: 'Show a Listening **Spotify** user status.', inline: true},
