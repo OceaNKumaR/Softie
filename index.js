@@ -85,21 +85,16 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;  
 
-    const mentionRegex = RegExp(`^<@!766228516647337984>$`);
-    const mentionRegexPrefix = RegExp(`^<@!766228516647337984> `);
-
-    if (!message.guild || message.author.bot) return;
-
-    if (message.content.match(mentionRegex)) message.reply(`<a:wavqq:798513082707607584> **Hey..!! Thanks For Pinging Me.**`);
-
-    if((message.content === "<@!766228516647337984>") || (message.content === "<@!766228516647337984>")){
-        let prefixembed = new Discord.MessageEmbed()
-      .setTitle(`My Prefix is \`s!\``)
-      .setDescription(`Use \`s!help\` To Get a List of All Commands. \n [Invite](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot) | [Support Server](https://discord.gg/k5KM6kP) `)
+    if(message.content.includes(bot.user.id)) {
+    message.reply(`<a:wavqq:798513082707607584> **Hey..!! Thanks For Pinging Me.**`);
+    
+    if(message.content.includes(bot.user.id)) {
+    message.channel.send(new Discord.MessageEmbed() 
+      .setTitle(`${message.author.username} My Prefix is \`s!\``, message.author.displayAvatarURL({dynamic:true}))
+      .setDescription(`Use \`s!help\` To Get a List of All Commands. \n[Invite](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot) | [Support Server](https://discord.gg/k5KM6kP) `)
       .setThumbnail('https://cdn.discordapp.com/attachments/772133780784807963/802069971433422878/Softie.png')
       .setFooter('www.softiebot.cf')
-      .setColor('#ffcfcf');
-    message.channel.send(prefixembed)
+      .setColor('#ffcfcf'));
 
 const queue2 = new Map();
 const queue3 = new Map();
@@ -114,7 +109,7 @@ let ops = {
 }
 
 
-  }
+  }}
   let prefix = botsettings.prefix;
 
   const messageArray = message.content.split(' ');
