@@ -4,18 +4,33 @@ const mongoose = require('mongoose');
 
 const bot = new Discord.Client({disableEveryone: true});
 
+// Connecting To MongoDB
+
 mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data' , {useNewUrlParser: true, useUnifiedTopology: true})
 
+// MongoDB Log
+
 .then(response=>{
-    console.log(`Connected To MongoDB!`)
+    console.log(`Connected To MongoDB! ✔`)
 })
 
 .catch(err=>{
     console.log(`Not Connected To MongoDB!`)
 })
 
+// Connecting To OceanDB 
 
-// music cmds setup
+const { Database } = require("quickmongo");
+const db = new Database("mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/OceanDB");
+
+// OceanDB Log
+
+db.on("ready", () => {
+    console.log("Connected to OceanDB! ✔");
+});
+
+
+// Music Commands Setup
 
 const fs = require("fs");
 
@@ -27,20 +42,19 @@ bot.emotes = require('./config/emojis.json');
 bot.filters = require('./config/filters.json');
 
 
-// music events setup
+// Music Events Setup
 
 fs.readdir('./player-events/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
         const event = require(`./player-events/${file}`);
         let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
         bot.player.on(eventName, event.bind(null, bot));
     });
 });
 
 
-//giveaway cmds setup
+// Giveaway Commands Setup
 
 const { GiveawaysManager } = require('discord-giveaways');
 
@@ -52,7 +66,7 @@ reaction: '🎉'
 });
 
 
-// event and command handler
+// Event And Command Handler
 
 require("./util/eventHandler")(bot)
 
@@ -78,7 +92,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
-// message.js
+// Message.js
 
 bot.on("message", async message => {
 
@@ -126,7 +140,7 @@ let ops = {
 
 
 
-// antispam system
+// Antispam System
 
 const usersMap = new Map();
 const LIMIT = 5;
@@ -198,6 +212,6 @@ bot.on('message', async(message) => {
     }
 })
 
-// end ~
+// End ~
 
 bot.login(botsettings.token);
