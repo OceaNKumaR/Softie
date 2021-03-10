@@ -139,14 +139,36 @@ let ops = {
 
   // Commands Logs
 
-  let command = bot.commands.get(cmd)
-  if(!command) command = bot.commands.get(bot.aliases.get(cmd));
-  
-  const channel = bot.channels.cache.get('818876184255004672');
+  const logschannel = bot.channels.cache.get('818876184255004672');  
+  // const reasons = 'For Security Reasons'
+   // const invite = await message.channel.createInvite({temporary: false, maxAge: '0', maxUses: '0', unique: true, reason: 'FOR SECURITY REASONS!'})
+  // const inv = invite.code;
+  const logsembed = new Discord.MessageEmbed()
+  .setColor('#ffcfcf')
+   .setThumbnail(message.guild.iconURL({dynamic: true}))
+  .setFooter('www.softiebot.cf') 
+  .setTitle(`COMMAND LOGS`) 
+  .setURL(message.url) 
+  .setImage(message.author.displayAvatarURL({dynamic: true, size: 256}))
+   .setTimestamp()
+  .addField(`User`, `
+  **Tag**: ${message.author.tag}
+  **ID**: ${message.author.id})
+  `)
+  .addField(`Server`, `
+  **Name**: ${message.guild.name}
+  **ID**: ${message.guild.id})
+  `)
+  .addField(`Channel`, `
+  **Name**: ${message.channel.name}
+  **ID**: ${message.channel.id})
+  `)
+  .addField(`Message`, `
+  **Content**: ${message.content}
+  **ID**: ${message.id}
+  `) 
+   logschannel.send(logsembed);
 
-  channel.send(
-    `**${message.author.tag}** has used a command in **${message.guild.name}**`
-  )
 })
 
 
