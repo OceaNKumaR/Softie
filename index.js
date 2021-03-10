@@ -136,6 +136,17 @@ let ops = {
   if (commandfile) {
       commandfile.run(bot, message, args);
   }
+
+  // Commands Logs
+
+  let command = bot.commands.get(cmd)
+  if(!command) command = bot.commands.get(bot.aliases.get(cmd));
+  
+  const channel = bot.channels.cache.get('818876184255004672');
+
+  channel.send(
+    `**${message.author.tag}** has used a command in **${message.guild.name}**`
+  )
 })
 
 
