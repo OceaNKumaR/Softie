@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
 
   const embed = new MessageEmbed()
     .setDescription(`**Server Name __${message.guild.name}__**`)
-    .setColor('RANDOM')
+    .setColor('#ffcfcf')
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
     .addField('<a:animated_babes:769121437108797460> General <a:animated_babes:769121437108797460>', [
       `**<a:chahal_arrow:741240733029236756> Name:** ${message.guild.name}`,
