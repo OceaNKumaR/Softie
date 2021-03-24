@@ -20,10 +20,10 @@ module.exports.run = async (bot, message, args) => {
     "8============D",
     ]
     let response = Math.floor(Math.random() * responses.length)
-   
+   const target = message.mentions.users.first() || message.author;
     const embed = new MessageEmbed()
     .setTitle('peepee size machine')
-    .setDescription(`${message.author.username}'s pp\n${responses[response]}`)
+    .setDescription(`${target.username}'s pp\n${responses[response]}`)
     .setColor("#ffcfcf")
     message.channel.send(embed)
 

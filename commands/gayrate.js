@@ -6,11 +6,12 @@ module.exports.run = async (bot, message, args) => {
 
     const min = Math.ceil(1);
 	const max = Math.floor(100);
-	const num = Math.floor(Math.random() * (max - min + 1)) + min;
+    const num = Math.floor(Math.random() * (max - min + 1)) + min;
+    const target = message.mentions.users.first() || message.author;
    
     const embed = new MessageEmbed()
     .setTitle('Gayr8 machine')
-    .setDescription(`${message.author.username} is ${num}% gay 🏳️‍🌈`)
+    .setDescription(`${target.username} is ${num}% gay 🏳️‍🌈`)
     .setColor("#ffcfcf")
     message.channel.send(embed)
 
