@@ -139,7 +139,7 @@ let ops = {
 
   // Commands Logs
 
-  const logschannel = bot.channels.cache.get('818876184255004672');  
+  const logschannel = bot.channels.cache.get('824156199984431154');  
   // const reasons = 'For Security Reasons'
    // const invite = await message.channel.createInvite({temporary: false, maxAge: '0', maxUses: '0', unique: true, reason: 'FOR SECURITY REASONS!'})
   // const inv = invite.code;
