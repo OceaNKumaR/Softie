@@ -96,6 +96,20 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", async message => {
 
+    // Chat Bot
+
+const { chatBot } = require("reconlx");
+const Schema = require("./schema/chatbot.js");
+
+    if (!message.guild || message.author.bot) return;
+    Schema.findOne({ Guild: message.guild.id }, async (err, data) => {
+        if (!data) return;
+        if (message.channel.id !== data.Channel) return;
+        chatBot (message, message.content, message.author.id);
+    })
+
+   // Mention Response
+
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;  
 
@@ -169,7 +183,7 @@ let ops = {
   `) 
    logschannel.send(logsembed);
 
-})
+});
 
 
 
