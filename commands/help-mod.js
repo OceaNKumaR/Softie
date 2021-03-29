@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require("../botsettings.json");
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
@@ -18,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setTimestamp()
 
-    message.channel.send(embed);
+    message.lineReply(embed);
 }
 
 module.exports.config = {

@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require("../botsettings.json");
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
@@ -21,13 +22,14 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:Wikipedia:803536696305647617> - `wikipedia`' , value: 'Shows Info From **Wikipedia**', inline: true},
         { name: '<:googleplaystore:778913243875770388> - `playstore`' , value: 'Shows **Playstore** app', inline: true},
         { name: '<:spotify:778913711514976286> - `spotify`' , value: 'Show a Listening **Spotify** user status.', inline: true},
+        { name: '<:Reddit:778915274631413771> - `reddit`' , value: 'Get a meme from a subreddit of your choice!', inline: true},
         { name: '<:ocean_instagram:729572981189115935> - `instagram`' , value: 'Find out some nice **instagram** statistics', inline: true},
  
     )
 
     .setTimestamp()
 
-    message.channel.send(embed);
+    message.lineReply(embed);
 }
 
 module.exports.config = {
