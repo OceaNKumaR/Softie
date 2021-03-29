@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require("../botsettings.json");
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -10,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 
     bot.player.resume(message);
 
-    message.channel.send(`${bot.emotes.success} - Song ${bot.player.getQueue(message).playing.title} **resumed** !`);
+    message.lineReply(`${bot.emotes.success} - Song ${bot.player.getQueue(message).playing.title} **resumed** !`);
 
 };
 

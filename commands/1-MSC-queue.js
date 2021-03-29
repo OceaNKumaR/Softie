@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const botconfig = require("../botsettings.json");
 const { MessageEmbed } =require('discord.js')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -17,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     }).slice(0, 5).join('\n') + `\n\n${queue.tracks.length > 5 ? `And **${queue.tracks.length - 5}** other songs...` : `In the playlist **${queue.tracks.length}** song(s)...`}`))
     .setColor("#ffcfcf")
 
-    message.channel.send(embed)
+    message.lineReply(embed)
 
 };
 

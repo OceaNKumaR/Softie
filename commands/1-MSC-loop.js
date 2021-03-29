@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require("../botsettings.json");
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -11,10 +12,10 @@ module.exports.run = async (bot, message, args) => {
 
     if (repeatMode) {
         client.player.setRepeatMode(message, false);
-        return message.channel.send(`${bot.emotes.success} - Repeat mode **disabled** !`);
+        return message.lineReply(`${bot.emotes.success} - Repeat mode **disabled** !`);
     } else {
         client.player.setRepeatMode(message, true);
-        return message.channel.send(`${bot.emotes.success} - Repeat mode **enabled** !`);
+        return message.lineReply(`${bot.emotes.success} - Repeat mode **enabled** !`);
     };
 
 };
