@@ -5,6 +5,7 @@ const {MessageEmbed} = require("discord.js")
 const Data = require('../schema/data')
 const data = require('../schema/data')
 const ms = require('ms')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -45,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
                 let embed = new MessageEmbed()
                 .setDescription(`**You beg for some money and ${member} finally gives you $${reward}**`)
                 .setColor("#ffcfcf")
-                message.channel.send(embed)
+                message.lineReply(embed)
 
             }
         }

@@ -5,6 +5,7 @@ const Data = require('../schema/data')
 const { model } = require('../schema/data')
 const { MessageEmbed } = require('discord.js')
 const ms = require('ms')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -46,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
                 .setFooter('Paying taxes regularly provide you discount in shop.')
                 .setColor("#ffcfcf")
                 .setTimestamp()
-                message.channel.send(embed)
+                message.lineReply(embed)
             }
         }
     })

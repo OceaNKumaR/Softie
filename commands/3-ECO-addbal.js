@@ -6,6 +6,7 @@ const Data = require('../schema/data')
 const data = require('../schema/data')
 const ms = require('ms')
 const ownerid = "494738882617933830";
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -42,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
                 .setDescription(`👍 **You Successfully Added $${reward} Into Your Account.**`)
                 .setColor("#ffcfcf")
                 .setTimestamp()
-                message.channel.send(embed)
+                message.lineReply(embed)
 
             }
         }

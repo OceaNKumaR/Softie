@@ -5,6 +5,7 @@ const Data = require('../schema/data')
 const { model } = require('../schema/data')
 const { MessageEmbed } = require('discord.js')
 const ms = require('ms')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -63,7 +64,7 @@ let response = Math.floor(Math.random() * responses.length)
                 .setDescription(`<:slowmode:805818971881996359> You need to wait 1h to get more money`)
                 .setColor("#ffcfcf") 
 
-                message.channel.send(embed)
+                message.lineReply(embed)
             }else{
                 data.Money +=reward
                 data.crime =Date.now()
@@ -73,7 +74,7 @@ let response = Math.floor(Math.random() * responses.length)
                 .setDescription(`${responses[response]} **$${reward}** 😈`)
                 .setTimestamp()
                 .setColor("#ffcfcf")
-                message.channel.send(embed)
+                message.lineReply(embed)
             }
         }
     })

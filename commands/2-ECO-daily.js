@@ -5,6 +5,7 @@ const Data = require('../schema/data')
 const { model } = require('../schema/data')
 const { MessageEmbed } = require('discord.js')
 const ms = require('ms')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -32,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
                 .setDescription(`<:slowmode:805818971881996359> You need to wait 24h to get more money`)
                 .setColor("#ffcfcf") 
 
-                message.channel.send(embed)
+                message.lineReply(embed)
             }else{
                 data.Money +=reward
                 data.daily =Date.now()
@@ -42,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
                 .setTitle("Your daily reward 😇")
                 .setDescription(`You received your daily reward of $${reward}`)
                 .setColor("#ffcfcf")
-                message.channel.send(embed)
+                message.lineReply(embed)
             }
         }
     })
