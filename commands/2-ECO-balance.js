@@ -4,6 +4,7 @@ const { MessageEmbed } = require("discord.js");
 const mongoose = require("mongoose")
 const Data = require('../schema/data')
 const { model } = require('../schema/data')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -26,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(`Balance of ${user.tag}`)
             .setDescription(`💵 **Money: ${data.Money}\n🏦 Bank: ${data.Bank}**` )
             .setColor("#ffcfcf")
-            message.channel.send(embed)
+            message.lineReply(embed)
         }
     })
 }

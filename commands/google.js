@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 const request = require ('node-superfetch')
+const inlinereply = require('discord-reply');
 
 module.exports.run = async (bot, message, args) => {
     let googleKey = "AIzaSyDUjVDpYYPgK4uZJlHY6isXSR9fTPAHS9A";
@@ -33,13 +34,13 @@ module.exports.run = async (bot, message, args) => {
 
     .setURL(href.link)
 
-    .setColor('RANDOM')
+    .setColor('#ffcfcf')
 
     .setFooter("Powered by Google" , "https://cdn.discordapp.com/emojis/778909809705615361.png?v=1")
 
 
 
-    return message.channel.send(embed);
+    return message.lineReply(embed);
 
 
 
