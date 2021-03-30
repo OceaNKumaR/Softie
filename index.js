@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
 const mongoose = require('mongoose');
-
+const inlinereply = require('discord-reply');
 const bot = new Discord.Client({disableEveryone: true});
 
 // Connecting To MongoDB
@@ -107,6 +107,14 @@ const Schema = require("./schema/chatbot.js");
         if (message.channel.id !== data.Channel) return;
         chatBot (message, message.content, message.author.id);
     })
+
+    // Inline Reply Test
+
+    if (message.content.startsWith('s!reply')) {
+        message.lineReply('Hey'); //Line (Inline) Reply with mention
+    
+        // message.lineReplyNoMention(`My name is ${client.user.username}`); //Line (Inline) Reply without mention
+      }
 
    // Mention Response
 
