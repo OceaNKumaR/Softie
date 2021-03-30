@@ -16,8 +16,9 @@ module.exports.run = async (bot, message, args) => {
         { name: '🎭 - `poll`' , value: 'Make a simple **poll** and its easy', inline: true},
         { name: '😷 - `covid`' , value: 'Track a country or worldwide **COVID-19** cases', inline: true},
         { name: '<:cooldown:778970390679781406> - `cooldown`' , value: 'Shows your **cooldown**', inline: true},
+        { name: ':man_detective: - `perms`' , value: 'Shows user **permissions**', inline: true},
         { name: '<:MW_members:778971298465447976> - `membercount`' , value: 'Tell how many members are in the server', inline: true},
-        { name: '<a:vr_z_maxintheclub:768365030978486293> - `emoji`' , value: 'Shows the all **emojis** in the server', inline: true},
+        { name: '😳 - `emoji`' , value: 'Shows the all **emojis** in the server', inline: true},
 
     )
 
