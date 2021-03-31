@@ -873,7 +873,7 @@ module.exports = function (bot) {
             const embed = new Discord.MessageEmbed()
                 .setTitle(`\`${message.guild.name}\` | Ranking Commands`)
                 .setTimestamp()
-                .setDescription(`> **HELP:**  \`${prefix}levelinghelp\``)
+                .setDescription(`> **HELP:**  \`${prefix}help-rank\``)
                 .setColor(embedcolor)
                 .addFields([{
                         name: "`rank [@User]`",
@@ -955,7 +955,7 @@ module.exports = function (bot) {
                         inline: true
                     }
                 ])
-            message.channel.send(embed)
+                message.lineReply(embed)
         }
 
     })
