@@ -46,7 +46,9 @@ message.reply(`**__${args.join(" ").toUpperCase()}__** is not a command.`)
         { name: '<:music:804267954690719794> - Soundboard' , value: '`s!help-soundboard`', inline: true},
         { name: '<:blobcamera:779627607338778654> - Image' , value: '`s!help-image`', inline: true},
         { name: ':musical_note: - Music', value: '`s!help-music`', inline: true},
-        { name: '<a:dollar2:798454639657746462> - Economy', value: '`s!help-economy`', inline: true}
+        { name: '<a:dollar2:798454639657746462> - Economy', value: '`s!help-economy`', inline: true},
+        { name: '<:Rankings:826696156611870721> - Leveling', value: '`s!help-leveling`', inline: true}
+
     )
     .setTimestamp()
 
