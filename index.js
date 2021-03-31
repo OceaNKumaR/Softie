@@ -3,6 +3,12 @@ const botsettings = require('./botsettings.json');
 const mongoose = require('mongoose');
 const inlinereply = require('discord-reply');
 const bot = new Discord.Client({disableEveryone: true});
+const Enmap = require("enmap")                 
+const canvacord = require("canvacord")         
+bot.points = new Enmap({ name: "points" }); 
+bot.on("ready", ()=>console.log("Leveling System Ready!"));  
+const ranking = require("./ranking.js");         
+ranking(bot);   
 
 // Connecting To MongoDB
 
