@@ -2,9 +2,12 @@ const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
 const mongoose = require('mongoose');
 const inlinereply = require('discord-reply');
+const colors = require("colors")
 const bot = new Discord.Client({disableEveryone: true});
 const Enmap = require("enmap")                 
-const canvacord = require("canvacord")         
+const canvacord = require("canvacord")
+const logger = require("./logger.js");  
+logger(bot);       
 bot.points = new Enmap({ name: "points" }); 
 bot.on("ready", ()=>console.log("Leveling System Ready!"));  
 const ranking = require("./ranking.js");         
@@ -24,16 +27,16 @@ mongoose.connect('mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/Data
     console.log(`Not Connected To MongoDB!`)
 })
 
-// Connecting To OceanDB 
+// Connecting To OceanDB "OFF"
 
-const { Database } = require("quickmongo");
-const db = new Database("mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/OceanDB");
+//const { Database } = require("quickmongo");
+//const db = new Database("mongodb+srv://OceanYT:Same_time*@softie.ic3xz.mongodb.net/OceanDB");
 
 // OceanDB Log
 
-db.on("ready", () => {
-    console.log("Connected to OceanDB! ✔");
-});
+//db.on("ready", () => {
+    //console.log("Connected to OceanDB! ✔");
+//});
 
 
 // Music Commands Setup
