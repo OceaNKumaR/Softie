@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:Google:778909809705615361> - `google`' , value: 'Googling somthing', inline: true},
         { name: '<:News:803193225573302303> - `news`' , value: 'Replies with the 5 latest world **news** headlines', inline: true},
         { name: '👤 - `avatar`' , value: 'Display a user **avatar**', inline: true},
-        { name: '<a:CheckDms:778911087923560459> - `dm`' , value: '**dm** a user', inline: true},
+        { name: '<:color:830323684497162240> - `color`' , value: 'Visualize any hex or rgb **color**', inline: true},
         { name: '<a:juejuejuejue:778911772265807892> - `ascii`' , value: 'Converts your text into **ascii**', inline: true},
         { name: '🎙️ - `tts`' , value: 'Text To Speech', inline: true},
         { name: '<:translate:815478416056909886> - `translate`' , value: '**Translate** a sentence', inline: true},
