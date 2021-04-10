@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
                 .replace(/@/g, "@" + String.fromCharCode(8203));
         else return text;
     }
-    let owner = '494738882617933830'
+    let owner = '494738882617933830','745867528651276318'
 
     if (!owner.includes(message.author.id)) return;
 
