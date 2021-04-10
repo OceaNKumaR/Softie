@@ -15,7 +15,7 @@
     "aki-api": "^5.2.1",
     "ascii-table": "0.0.9",
     "atob": "^2.1.2",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "canvacord": "^5.0.7",
     "canvas": "^2.7.0",
     "cheerio": "^1.0.0-rc.3",
