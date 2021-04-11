@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     }
     let owner = ['494738882617933830','745867528651276318']
 
-    if (!owner.includes(message.author.id)) return;
+    if (!owner.includes(message.author.id)) return message.reply("Developers Only!");
 
     try {
         const code = args.join(" ");
