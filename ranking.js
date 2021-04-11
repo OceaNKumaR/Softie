@@ -1,5 +1,3 @@
-const config = require("./config/leveling.json");
-const botsettings = require('./botsettings.json');
 const canvacord = require("canvacord");
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
