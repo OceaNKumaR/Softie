@@ -253,10 +253,12 @@ ${message.attachments.map(x => x.proxyURL)}
     });
 
     c.on("messageUpdate", async function(oldMessage, newMessage) {
-      if (oldMessage.author.bot) return;
-
-      if (oldMessage.channel.type !== "text") return;
-      if (newMessage.channel.type !== "text") return;
+      if (newMessage.author.bot) return;
+await newMessage.fetch();
+await oldMessage.fetch();
+await newMessage.channel.fetch();
+await newMessage.guild.fetch();
+       if (newMessage.channel.type !== "text") return;
 
       if (oldMessage.content === newMessage.content) return;
       send_log(
