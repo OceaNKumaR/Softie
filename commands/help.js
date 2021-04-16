@@ -33,6 +33,7 @@ message.reply(`**__${args.join(" ").toUpperCase()}__** is not a command.`)
     .setTitle(':mailbox_with_mail: Need help?')
     .setDescription('My prefix `s!` **[Support Server](https://discord.gg/6XNRgaJTSp)**--**[Invite me](https://discord.com/oauth2/authorize?client_id=766228516647337984&permissions=8&scope=bot)** ')
     .setColor('#ffcfcf')
+    .setImage('https://cdn.discordapp.com/attachments/777058704532701185/832253755629895721/standard_1.gif')
     .addFields({ name:'New Commands - ' , value: 'translate, embed, shorturl'},
         { name:'<:softie:778158491004567552> - Softie : `s!help-softie`' , value: '__**Catergories**__'},
         { name: ':eyeglasses: - Moderation', value: '`s!help-mod`', inline: true},

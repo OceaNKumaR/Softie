@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
         { name: ':stopwatch: - `slowmode`' , value: 'Changes a specific channel **slowdown**', inline: true},
         { name: ':face_with_raised_eyebrow: - `nick`' , value: 'Changes a server member **nickname**', inline: true},
         { name: ':no_mouth: - `mute`' , value: '**mutes** a user', inline: true},
+        { name: ':cowboy: - `role`' , value: 'Add/remove a user to a role or roles.', inline: true},
         { name: ':x::no_mouth: - `unmute`' , value: '**Unmutes** a server member.', inline: true},
         
     )
