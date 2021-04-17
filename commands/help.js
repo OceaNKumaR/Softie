@@ -5,7 +5,7 @@ const pagination = require('discord.js-pagination');
 module.exports.run = async (bot, message, args) => {
    
     if(args[0]) {
-        let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.aliases && Array.isArray(cmd.aliases) && cmd.aliases.includes(args[0]));
+        let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.config.aliases && Array.isArray(cmd.config.aliases) && cmd.config.aliases.includes(args[0]));
 
         if(command) {
             
