@@ -38,6 +38,7 @@
     "fund": "^1.0.0",
     "google-play-scraper": "^8.0.2",
     "got": "^11.7.0",
+    "humanize-duration": "^3.25.1",
     "imageapi.js": "^1.0.19",
     "images-scraper": "^5.0.7",
     "index.js": "0.0.3",
