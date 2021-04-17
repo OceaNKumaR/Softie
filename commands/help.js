@@ -11,11 +11,7 @@ module.exports.run = async (bot, message, args) => {
             
             var embed = new Discord.MessageEmbed()
             .setAuthor(`s!${command.config.name} Command`)
-            .setDescription(`
-            <a:arrow2:769113354559029249> **Description** ${command.config.description || "There is no Description for this command."}
-            <a:arrow2:769113354559029249> **Usage:** ${command.config.usage || "No Usage"}
-            <a:arrow2:769113354559029249> **Permissions:** ${command.config.accessableby || "Members"}
-            <a:arrow2:769113354559029249> **Aliases:** ${command.config.aliases || "No Aliases"}`)
+            .setDescription(`<a:arrow2:769113354559029249> **Description** ${command.config.description || "There is no Description for this command."}\n<a:arrow2:769113354559029249> **Usage:** ${command.config.usage || "No Usage"}\n<a:arrow2:769113354559029249> **Permissions:** ${command.config.accessableby || "Members"}\n<a:arrow2:769113354559029249> **Aliases:** ${command.config.aliases || "No Aliases"}`)
             .setColor('#ffcfcf')
 
         message.channel.send(embed);
