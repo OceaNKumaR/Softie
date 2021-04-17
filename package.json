@@ -23,6 +23,7 @@
     "colors": "^1.4.0",
     "common-tags": "^1.8.0",
     "covidtracker": "^2.0.1",
+    "cron": "^1.8.2",
     "discord-canvas": "^1.4.1",
     "discord-giveaways": "^4.2.1",
     "discord-player": "^3.2.1",
