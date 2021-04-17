@@ -3,15 +3,12 @@ const botconfig = require("../botsettings.json");
 const pagination = require('discord.js-pagination');
 
 module.exports.run = async (bot, message, args) => {
-    let helpArray = message.content.split(" ");
-    let helpArgs = helpArray.slice(1);
+   
+    if(args[0]) {
+        let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.aliases && Array.isArray(cmd.aliases) && cmd.aliases.includes(args[0]));
 
-    if(helpArgs[0]) {
-        let command = helpArgs[0];
-
-        if(bot.commands.has(command)) {
+        if(command) {
             
-            command = bot.commands.get(command);
             var embed = new Discord.MessageEmbed()
             .setAuthor(`s!${command.config.name} Command`)
             .setDescription(`
