@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '👤 - `about`' , value: 'Shows some information **about** the bot', inline: true},
         { name: '<:Blob_ping:778932436636794911> - `ping`' , value: 'Shows the **ping** of the bot', inline: true},
         { name: '👥 - `clientid`' , value: 'Shows the id of the client', inline: true},
+        { name: ':inbox_tray: - `membergraph`' , value: 'Shows the graph of members joined in a week.', inline: true},
         { name: '🎭 - `poll`' , value: 'Make a simple **poll** and its easy', inline: true},
         { name: '😷 - `covid`' , value: 'Track a country or worldwide **COVID-19** cases', inline: true},
         { name: '<:cooldown:778970390679781406> - `cooldown`' , value: 'Shows your **cooldown**', inline: true},
