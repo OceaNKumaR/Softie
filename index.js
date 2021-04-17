@@ -202,7 +202,32 @@ let ops = {
 
 });
 
+// Graph member Stats
 
+const { CronJob } = require('cron')
+
+bot.joins = new Enmap({name: "joins", autoFetch: true, fetchAll: true})
+
+new CronJob('0 12 * * Sun', () => {
+  client.joins.clear()
+}, null, true, 'America/Los_Angeles')
+
+bot.on('guildMemberAdd', async member => {
+    bot.joins.ensure(member.guild.id, {
+        "monday": 0,
+        "tuesday": 0,
+        "wednesday": 0,
+        "thursday": 0,
+        "friday": 0,
+        "saturday": 0,
+        "sunday": 0,
+      })
+    
+      let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      let dayName = days[new Date().getDay()].toLowerCase()
+    
+      bot.joins.inc(member.guild.id, dayName)
+});
 
 // Antispam System
 
