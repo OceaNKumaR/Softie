@@ -129,7 +129,7 @@ const Schema = require("./schema/chatbot.js");
 
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;  
-
+if(message.webhookID) return;
     if(message.content.includes(bot.user.id)) {
     message.reply(`<a:wavqq:798513082707607584> **Hey..!! Thanks For Pinging Me.**`);
     
@@ -156,14 +156,12 @@ let ops = {
 
   }}
   let prefix = botsettings.prefix;
-
-  const messageArray = message.content.split(' ');
-  const cmd = messageArray[0];
-  const args = messageArray.slice(1);
-  var parts = message.content.split(" ");
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const cmd = args.shift().toLowerCase();
+  var parts = message.content.split(/ +/) 
   
   if (!message.content.startsWith(prefix)) return;
-  const commandfile = bot.commands.get(cmd.slice(prefix.length).toString().toLowerCase()) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length).toString().toLowerCase()));;
+  const commandfile = bot.commands.get(cmd) || bot.commands.find(c => c.config.aliases && Array.isArray(c.config.aliases) && c.config.aliases.includes(cmd)) || bot.commands.get(bot.aliases.get(cmd));;
   if (commandfile) {
       commandfile.run(bot, message, args);
   }
