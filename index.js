@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const inlinereply = require('discord-reply');
 const colors = require("colors")
 const bot = new Discord.Client({disableEveryone: true});
-require("./uploadcode")(bot);
+// "OFF" require("./uploadcode")(bot);
 const Enmap = require("enmap")                 
 const canvacord = require("canvacord")
 const logger = require("./logger.js");  
