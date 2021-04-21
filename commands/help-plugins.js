@@ -4,30 +4,38 @@ const pagination = require('discord.js-pagination');
 
 module.exports.run = async (bot, message, args) => {
 
-    let owner = '494738882617933830'
-
-    if (!owner.includes(message.author.id)) return;
-
     const main = new Discord.MessageEmbed()
     .setTitle('__**Plugins**__')
-    .setDescription(`**Info About Pages**\n\n📕 **Page 1: Reaction-Roles**\n📗 **Page 2: Word Blacklist System**\n📘 **Page 3: Server Stats**\n📙** Page 4: Logging System**\n📔 **Page 5: Chat Bot**\n📓 **Page 6: Ticket System**`)
+    .setDescription(`**Info About Pages**\n\n📕 **Page 1: Chat Bot**\n📔 **Page 2: Welcome System**\n📙** Page 3: Logging System**\n📘 **Page 4: Server Stats**\n📔 **Page 5: Chat Bot**`)
     .setColor("#ffcfcf")
     .setTimestamp()
 
     const chatbot = new Discord.MessageEmbed()
-    .setTitle('**ChatBot')
+    .setTitle('**ChatBot**')
     .setDescription(' The Bot chats with you lol.\n\n Usage: ```s!set-chatbot```')
     .setImage('https://cdn.discordapp.com/attachments/825597696793509918/827780193099317299/Capture.PNG')
+    .setColor("#ffcfcf")
     .setTimestamp()
 
-    const serverstats = new Discord.MessageEmbed()
-    .setTitle('**Server Stats')
-    .setDescription('Track the amount of people in your server at all times.\n\n Usage: ```s!set-membercount```')
+    const welcome = new Discord.MessageEmbed()
+    .setTitle('**Welcome system**')
+    .setDescription('A Welcomer system with custom welcome messages.\n\n Usage: ```s!set-welcome```')
+    .setImage('https://cdn.discordapp.com/attachments/805432268310577164/833279323184037898/23.PNG')
+    .setColor("#ffcfcf")
     .setTimestamp()
 
     const logging = new Discord.MessageEmbed()
     .setTitle('**Logging System**')
     .setDescription('This System allows you to log all events in a Channel.\n\n Usage: ```s!set-logchannel```')
+    .setImage('https://cdn.discordapp.com/attachments/827770875255980032/833281572920098836/3.PNG')
+    .setColor("#ffcfcf")
+    .setTimestamp()
+
+    const serverstats = new Discord.MessageEmbed()
+    .setTitle('**Server Stats**')
+    .setDescription('Track the amount of people in your server at all times.\n\n Usage: ```Under Maintenance!```')
+    .setImage('https://cdn.discordapp.com/attachments/827770875255980032/833282333469704192/232323.PNG')
+    .setColor("#ffcfcf")
     .setTimestamp()
 
 
@@ -35,8 +43,9 @@ module.exports.run = async (bot, message, args) => {
 const pages = [
     main,
     chatbot,
-    serverstats,
-    logging
+    welcome,
+    logging,
+    serverstats
 ]
 
 const emojiList = ["⏪", "⏩"];
