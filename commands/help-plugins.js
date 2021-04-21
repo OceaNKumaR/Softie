@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     const main = new Discord.MessageEmbed()
     .setTitle('__**Plugins**__')
-    .setDescription(`**Info About Pages**\n\n📕 **Page 1: Chat Bot**\n📔 **Page 2: Welcome System**\n📙** Page 3: Logging System**\n📘 **Page 4: Server Stats**\n📔 **Page 5: Chat Bot**`)
+    .setDescription(`**Info About Pages**\n\n📕 **Page 1: Chat Bot**\n📔 **Page 2: Welcome System**\n📙** Page 3: Logging System**\n📘 **Page 4: Server Stats**\n📗 **Page 5: Server Stats**`)
     .setColor("#ffcfcf")
     .setTimestamp()
 
