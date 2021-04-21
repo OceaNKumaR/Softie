@@ -228,6 +228,114 @@ bot.on('guildMemberAdd', async member => {
       bot.joins.inc(member.guild.id, dayName)
 });
 
+//--------------------------------------------------------------------------------------------------------------------\\
+
+// Welcome and Goodbye System 
+
+const Canvas = require("canvas");
+const WelcomeSchema = require('./models/welcome-schema.js');
+
+bot.on("guildMemberAdd", async (member, guild) => {
+    WelcomeSchema.findOne({ guildId: member.guild.id }, async (err, data) => {
+        if(!data) return;
+
+        let responses = ["Luckily the weather is on our side today! The sun and I are pleased to offer you a warm welcome.",
+                         "Here's a hearty welcome, big and warm enough to encompass you all! To say we are thrilled to see you is an understatement.",
+                         "It's my pleasure to extend a cheerful welcome to you all! Your presence makes us very happy.",
+                         "Fellow members, please join me in giving our guests the most cordial of welcomes.",
+                         "Let's hear it for a sociable welcome! On the count of three, turn to your neighbor and say 'hello'. There are no strangers here, only friends we are yet to meet.",
+                         "It's my pleasant duty to bid you all a genial welcome.",
+                         "On behalf of my colleagues, I wish you all a convivial welcome. We are going to have a merry and enjoyable time together.",
+                         "The flags are flying. The balloons are ready for release. It's a great day, one we've been planning and waiting for. I'm sure you'll concur, this is an agreeable welcome.",
+                         "It's gratifying to look around and see so many familiar faces. That's a pleasing welcome to what I know is a going to be a great conference.",
+                         "It's a glad welcome we bring to you this morning, filled with the desires, hopes and dreams we all share.",
+                         "We're delighted to offer the most hospitable welcome we can.",
+                         "Dear guests, look around you! An amiable welcome full of friendship is yours.",
+                         "Our desire is to extend a gracious and inclusive welcome to all of you. For now let's put aside our differences and instead celebrate what brings us together!",
+                         "The flags are flying. The balloons are ready for release. It's a great day, one we've been planning and waiting for. I'm sure you'll concur, this is an agreeable welcome.",
+                         "You know what's great about these events? You are always assured of a pleasant welcome. This is feel-good central and we aim.",
+                         "Many of you have made a huge effort to join us today. On behalf of us all, we are deeply appreciative and offer you our most grateful welcome.",
+                         "Today is the day we begin to learn to look through the eyes of others; to find out and experience what the world is like for them. It is also the day we grow bigger than our differences and offer to everyone regardless of historical rights and wrongs, a friendly welcome, an outstretched hand.",
+                         "Wow, what a gathering we have here tonight. We've got dignitaries, celebrities, fans, and organizational members all brought together for one cause. Ours. Here's an appreciative welcome to you.",
+                         "Ladies and gentlemen, the room is ready. The tables are set. The band is playing our theme song. And the waiting staff are preparing to take your orders. This is a superb welcome, fit for royalty, and that's what you are to us.",
+                         "To our special guests; look around. See the smiles of everyone's faces? We are truly delighted to welcome you here today.",
+                         "Ladies and gentlemen, tonight we have stars in the sky, and on stage. We are favored to welcome some the brightest the world has seen.",
+                         "I look around the stage and am in awe with the collected expertise gathered here. We are deeply honored to welcome you.",
+                         "Ladies and gentlemen, please give a huge welcome to.",
+                         "Do you hear the applause? The audience joins me in a rapturous welcome! We are thrilled to have you with us today."]
+
+        let response = Math.floor(Math.random() * responses.length)
+
+        const user = member.user;
+        const channel = member.guild.channels.cache.get(data.channelId);
+        const welcomemsg = data.welcomeMsg;
+
+        const canvas = Canvas.createCanvas(1772, 633);
+        //make it "2D"
+        const ctx = canvas.getContext('2d');
+        //set the Background to the welcome.png
+        const background = await Canvas.loadImage(`./assets/pics/welcome.png`);
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = '#f2f2f2';
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        //set the first text string 
+        var textString3 = `${member.user.username}`;
+        //if the text is too big then smaller the text
+        if (textString3.length >= 14) {
+          ctx.font = 'bold 100px Genta';
+          ctx.fillStyle = '#f2f2f2';
+          ctx.fillText(textString3, 720, canvas.height / 2 + 20);
+        }
+        //else dont do it
+        else {
+          ctx.font = 'bold 150px Genta';
+          ctx.fillStyle = '#f2f2f2';
+          ctx.fillText(textString3, 720, canvas.height / 2 + 20);
+        }
+        //define the Discriminator Tag
+        var textString2 = `#${member.user.discriminator}`;
+        ctx.font = 'bold 40px Genta';
+        ctx.fillStyle = '#f2f2f2';
+        ctx.fillText(textString2, 730, canvas.height / 2 + 58);
+        //define the Member count
+        var textString4 = `Member #${member.guild.memberCount}`;
+        ctx.font = 'bold 60px Genta';
+        ctx.fillStyle = '#f2f2f2';
+        ctx.fillText(textString4, 750, canvas.height / 2 + 125);
+        //get the Guild Name
+        var textString4 = `Welcome To ${member.guild.name}`;
+        ctx.font = 'bold 60px Genta';
+        ctx.fillStyle = '#f2f2f2';
+        ctx.fillText(textString4, 700, canvas.height / 2 - 150);
+        //create a circular "mask"
+        ctx.beginPath();
+        ctx.arc(315, canvas.height / 2, 250, 0, Math.PI * 2, true);//position of img
+        ctx.closePath();
+        ctx.clip();
+        //define the user avatar
+        const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+        //draw the avatar
+        ctx.drawImage(avatar, 65, canvas.height / 2 - 250, 500, 500);
+        //get it as a discord attachment
+        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
+
+        //define the welcome embed
+        const welcomeembed = new Discord.MessageEmbed()
+          .setColor("#ffcfcf")
+          .setTimestamp()
+          .setFooter("Welcome", member.guild.iconURL({ dynamic: true }))
+          .setDescription(`<a:Bemvindo:832980086835118080> **Hey ${user} welcome to ${member.guild.name}!** <a:Bemvindo:832980086835118080> \n\n ${welcomemsg} \n\n "*${responses[response]}*"`)
+          .setImage("attachment://welcome-image.png")
+          .attachFiles(attachment);
+        //send the welcome embed to there
+        channel.send(welcomeembed);
+
+        // Test // channel.send(`Welcome ${user}!`)
+    })
+})
+
+//--------------------------------------------------------------------------------------------------------------------\\
+
 // Antispam System
 
 const usersMap = new Map();
