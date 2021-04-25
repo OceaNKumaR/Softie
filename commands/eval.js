@@ -1,49 +1,69 @@
-const Discord = require('discord.js');
-const botconfig = require('../botsettings.json');
-const { MessageEmbed } = require('discord.js')
+const Discord = require("discord.js");
+const discord = require("discord.js");
+const { MessageEmbed, MessageAttachment} = require("discord.js");
+const ms = require("ms");
+const fs = require("fs");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.config = {
+  name: "eval",
+  description: "Evaluates a js code.",
+  
+  aliases: ['e'],
 
-    function clean(text) {
-        if (typeof text === "string")
-            return text
-                .replace(/`/g, "`" + String.fromCharCode(8203))
-                .replace(/@/g, "@" + String.fromCharCode(8203));
-        else return text;
-    }
-    let owner = ['494738882617933830','745867528651276318']
+  async run(bot, message, args, prefix) {
+let owner = ['494738882617933830','745867528651276318']
 
     if (!owner.includes(message.author.id)) return message.reply("Developers Only!");
 
-    try {
-        const code = args.join(" ");
-        let evaled = eval(code);
+    let stop;
+    let time;
+    let start;
+function clean(text) {
+            if (typeof text === "string")
+                return text
+                    .replace(/`/g, "`" + String.fromCharCode(8203))
+                    .replace(/@/g, "@" + String.fromCharCode(8203))    .replace(new RegExp(bot.token, "gi"), "[TOKEN]");
+            else return text;
+        }
 
-        if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
+      
 
-        message.react("✅");
-        var emb = new MessageEmbed()
-            .setTitle('Result')
-            .setDescription(`\`\`\`js` + '\n' + clean(evaled) + `\n` + `\`\`\``)
-            .setFooter(bot.user.username, bot.user.displayAvatarURL({ dynamic: true }))
-            .setColor(0xd26a0e)
-        message.channel.send(emb);
-    } catch (err) {
-        message.react("⚠");
-        var emb = new MessageEmbed()
-            .setTitle('Result')
-            .setDescription(`\`\`\`js` + '\n' + clean(err) + `\n` + `\`\`\``)
-            .setFooter(bot.user.username, bot.user.displayAvatarURL({ dynamic: true }))
-            .setColor(0xd26a0e)
-        message.channel.send(emb);
+        try {
+           let code = args.join(" ");
+if(code.includes("await")) code = "(async () => {" + code + " })()";
+          start = process.hrtime();
+            let evaled = eval(code);
+
+            if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
+
+            message.react("✅");
+ const des = `\`\`\`js` + '\n' + clean(evaled) + `\n` + `\`\`\``
+      stop = process.hrtime(start);
+time = `${(((stop[0] * 1e9) + stop[1])) / 1e6} ms`;
+  if(des.length < 2000) { 
+await message.channel.send(`*Executed in ${time}*\n${des}`)
+} else {  
+      const output = new Discord.MessageAttachment(Buffer.from(des), "output.txt");
+        await message.channel.send(`*Executed in ${time}*`, output)
+}
+          
+        } catch (err) {
+            message.react("⚠");
+      stop = process.hrtime(start);
+ time = `${(((stop[0] * 1e9) + stop[1])) / 1e6} ms`;
+ const des = `\`\`\`py` + '\n' + clean(err) + `\n` + `\`\`\``
+ if(des.length < 2000) { 
+await message.channel.send(`*Executed in ${time}*\n${des}`)
+} else {  
+      const error = new Discord.MessageAttachment(Buffer.from(des) , "error.txt");
+        await message.channel.send(`*Executed in ${time}*`, error);
+}
+        }
+
+
     }
 }
 
 
-module.exports.config = {
-    name: "eval",
-    description: "Evaluates js code",
-    usage: "s!eval",
-    accessableby: "Admin",
-    aliases: []
-}
+     
+     
