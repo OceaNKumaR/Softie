@@ -4,13 +4,13 @@ const { MessageEmbed, MessageAttachment} = require("discord.js");
 const ms = require("ms");
 const fs = require("fs");
 
-module.exports.config = {
+module.exports = {
+config: {
   name: "eval",
   description: "Evaluates a js code.",
-  
   aliases: ['e'],
-
-  async run(bot, message, args, prefix) {
+}, 
+async run(bot, message, args, prefix) {
 let owner = ['494738882617933830','745867528651276318']
 
     if (!owner.includes(message.author.id)) return message.reply("Developers Only!");
