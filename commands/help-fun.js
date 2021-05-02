@@ -21,7 +21,8 @@ module.exports.run = async (bot, message, args) => {
         { name: ':grey_question: - `coinflip`' , value: 's it heads? Or its Tails? Lets check it!', inline: true},
         { name: '<:gay:782602050915139595> - `emojify`' , value: 'Converts your text into emoji', inline: true},
         { name: '🏳️‍🌈 - `gayrate`' , value: 'what is the percentage of your gayness?', inline: true},
-        { name: '🍆 - `pp`' , value: 'Shows you your **pp** size', inline: true}
+        { name: '🍆 - `pp`' , value: 'Shows you your **pp** size', inline: true},
+        { name: '❔ - `rather`' , value: 'Would You Rather', inline: true}
  
         )
         .setTimestamp()
