@@ -26,5 +26,5 @@ module.exports.config = {
     description: "iam gae",
     usage: "s!help-others",
     accessableby: "Members",
-    aliases: []
+    aliases: ["help-other"]
 }

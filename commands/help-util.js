@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
         { name: '<:color:830323684497162240> - `color`' , value: 'Visualize any hex or rgb **color**', inline: true},
         { name: '<a:juejuejuejue:778911772265807892> - `ascii`' , value: 'Converts your text into **ascii**', inline: true},
         { name: '🎙️ - `tts`' , value: 'Text To Speech', inline: true},
+        { name: '<:slowmode:805818971881996359> - `reminder`' , value: 'Sets **Reminder** with reason.', inline: true},
         { name: '<:translate:815478416056909886> - `translate`' , value: '**Translate** a sentence', inline: true},
         { name: '<:server23:815457742823096350> - `embed`' , value: 'Converts Your Text To **Embed**', inline: true},
         { name: '🌅 - `wallpaper`' , value: 'Get a cool **wallpaper** for yourself', inline: true},
