@@ -2,8 +2,11 @@ const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.permissions.has("MANAGE_MESSAGES"))
-      return message.channel.send("You do not have enough permissions!");
+
+  let owner = '494738882617933830'
+
+  if (!owner.includes(message.author.id)) return;c
+    
     let user =
       message.mentions.members.first() ||
       message.guild.members.cache.get(args[0]);
